@@ -41,7 +41,7 @@
 </li>
 </ol>
 <p>成功后会提示</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">INFO Created: D:\blog\<span class="built_in">source</span>\tags\index.md</span><br></pre></td></tr></table></figure>
 
 <p>根据上面的路劲，找到<kbd>index.md</kbd>这个文件打开后默认内容是这样的：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2017-05-27 14:22:08</span><br></pre></td></tr></table></figure>
