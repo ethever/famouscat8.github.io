@@ -3,7 +3,37 @@
   <entry>
     <title>HEXO搭建博客全攻略</title>
     <url>/2019/10/12/HEXO%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%85%A8%E6%94%BB%E7%95%A5/</url>
-    <content><![CDATA[<a id="more"></a>]]></content>
+    <content><![CDATA[<h3 id="图片点击实现全屏查看"><a href="#图片点击实现全屏查看" class="headerlink" title="图片点击实现全屏查看"></a>图片点击实现全屏查看</h3><h5 id="方法1-使用fancybox插件"><a href="#方法1-使用fancybox插件" class="headerlink" title="方法1.使用fancybox插件"></a>方法1.使用fancybox插件</h5><ol>
+<li>切换到lib目录：<blockquote>
+<p>cd next/source/lib</p>
+</blockquote>
+</li>
+<li>下载fancybox插件：<blockquote>
+<p>git clone <a href="https://github.com/theme-next/theme-next-fancybox3" target="_blank" rel="noopener">https://github.com/theme-next/theme-next-fancybox3</a> fancybox</p>
+</blockquote>
+</li>
+</ol>
+<img src="http://pz8wb8fk9.bkt.clouddn.com/static/images/gitfancybox.jpg">
+
+<ol start="3">
+<li>更改主题配置文件：</li>
+</ol>
+<p><strong>是 主题(比如next)/_config.yml</strong></p>
+<a id="more"></a>
+
+<p>打开主题文件夹下_config.yml 作以下更改：(注意”:”后有且只有一个空格)</p>
+<blockquote>
+<p>fancybox: true</p>
+</blockquote>
+<ol start="4">
+<li>生成，本地测试<blockquote>
+<p>hexo g<br>hexo s</p>
+</blockquote>
+</li>
+</ol>
+<img src="http://pz8wb8fk9.bkt.clouddn.com/static/images/zs.jpg">
+<p>OK 简直完美~</p>
+]]></content>
   </entry>
   <entry>
     <title>常用网站，你懂的</title>

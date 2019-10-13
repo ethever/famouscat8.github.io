@@ -19,6 +19,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 
 <script id="hexo-configurations">
@@ -32,7 +33,7 @@
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
+    fancybox: true,
     mediumzoom: false,
     lazyload: false,
     pangu: false,
@@ -55,14 +56,20 @@
   };
 </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="图片点击实现全屏查看方法1.使用fancybox插件 切换到lib目录： cd next/source/lib   下载fancybox插件： git clone https://github.com/theme-next/theme-next-fancybox3 fancybox       更改主题配置文件：  是 主题(比如next)/_config.yml">
+<meta property="og:type" content="article">
 <meta property="og:title" content="HEXO搭建博客全攻略">
 <meta property="og:url" content="http://yoursite.com/2019/10/12/HEXO搭建博客全攻略/index.html">
 <meta property="og:site_name" content="FamousCat">
+<meta property="og:description" content="图片点击实现全屏查看方法1.使用fancybox插件 切换到lib目录： cd next/source/lib   下载fancybox插件： git clone https://github.com/theme-next/theme-next-fancybox3 fancybox       更改主题配置文件：  是 主题(比如next)/_config.yml">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-12T16:50:28.725Z">
+<meta property="og:image" content="http://pz8wb8fk9.bkt.clouddn.com/static/images/gitfancybox.jpg">
+<meta property="og:image" content="http://pz8wb8fk9.bkt.clouddn.com/static/images/zs.jpg">
+<meta property="og:updated_time" content="2019-10-13T05:49:21.813Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HEXO搭建博客全攻略">
+<meta name="twitter:description" content="图片点击实现全屏查看方法1.使用fancybox插件 切换到lib目录： cd next/source/lib   下载fancybox插件： git clone https://github.com/theme-next/theme-next-fancybox3 fancybox       更改主题配置文件：  是 主题(比如next)/_config.yml">
+<meta name="twitter:image" content="http://pz8wb8fk9.bkt.clouddn.com/static/images/gitfancybox.jpg">
   <link rel="canonical" href="http://yoursite.com/2019/10/12/HEXO搭建博客全攻略/">
 
 
@@ -348,7 +355,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-13 00:50:28" itemprop="dateModified" datetime="2019-10-13T00:50:28+08:00">2019-10-13</time>
+                <time title="修改时间：2019-10-13 13:49:21" itemprop="dateModified" datetime="2019-10-13T13:49:21+08:00">2019-10-13</time>
               </span>
             
           
@@ -364,7 +371,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <a id="more"></a>
+        <h3 id="图片点击实现全屏查看"><a href="#图片点击实现全屏查看" class="headerlink" title="图片点击实现全屏查看"></a>图片点击实现全屏查看</h3><h5 id="方法1-使用fancybox插件"><a href="#方法1-使用fancybox插件" class="headerlink" title="方法1.使用fancybox插件"></a>方法1.使用fancybox插件</h5><ol>
+<li>切换到lib目录：<blockquote>
+<p>cd next/source/lib</p>
+</blockquote>
+</li>
+<li>下载fancybox插件：<blockquote>
+<p>git clone <a href="https://github.com/theme-next/theme-next-fancybox3" target="_blank" rel="noopener">https://github.com/theme-next/theme-next-fancybox3</a> fancybox</p>
+</blockquote>
+</li>
+</ol>
+<img src="http://pz8wb8fk9.bkt.clouddn.com/static/images/gitfancybox.jpg">
+
+<ol start="3">
+<li>更改主题配置文件：</li>
+</ol>
+<p><strong>是 主题(比如next)/_config.yml</strong></p>
+<a id="more"></a>
+
+<p>打开主题文件夹下_config.yml 作以下更改：(注意”:”后有且只有一个空格)</p>
+<blockquote>
+<p>fancybox: true</p>
+</blockquote>
+<ol start="4">
+<li>生成，本地测试<blockquote>
+<p>hexo g<br>hexo s</p>
+</blockquote>
+</li>
+</ol>
+<img src="http://pz8wb8fk9.bkt.clouddn.com/static/images/zs.jpg">
+<p>OK 简直完美~</p>
+
     </div>
 
     
@@ -444,6 +481,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#图片点击实现全屏查看"><span class="nav-number">1.</span> <span class="nav-text">图片点击实现全屏查看</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#方法1-使用fancybox插件"><span class="nav-number">1.0.1.</span> <span class="nav-text">方法1.使用fancybox插件</span></a></li></ol></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
@@ -559,7 +598,7 @@ setInterval("createtime()",250);
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">1.5k</span> 字
+      博客全站共： <span class="post-count">1.6k</span> 字
     </span>
 </div>
 
@@ -586,6 +625,8 @@ setInterval("createtime()",250);
   
   <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
   <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
