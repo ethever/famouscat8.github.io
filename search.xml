@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>绝对值不等式</title>
+    <url>/2019/10/15/%E7%BB%9D%E5%AF%B9%E5%80%BC%E4%B8%8D%E7%AD%89%E5%BC%8F/</url>
+    <content><![CDATA[<p>想记住的公式复习千万遍还是记不住</p>
+<p>想忘掉的人总是在深夜想起。</p>
+<p>$$<br>||a|-|b||&lt;=|a+b|&lt;=|a|+|b|<br>$$</p>
+<p>$$<br>||a|-|b||&lt;=|a-b|&lt;=|a|+|b|<br>$$</p>
+<p>$$<br>sin x &lt; x &lt; tan x   </p>
+<p>0&lt;x&lt;(pi/2)<br>$$</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+        <tag>高数</tag>
+        <tag>绝对值</tag>
+        <tag>不等式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>编码系统原理</title>
+    <url>/2019/10/14/%E7%BC%96%E7%A0%81%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>C语言运算符优先级</title>
+    <url>/2019/10/13/C%E8%AF%AD%E8%A8%80%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7/</url>
+    <content><![CDATA[<img src="http://pz8wb8fk9.bkt.clouddn.com/static/images/webyou2.jpg">
+
+<a id="more"></a>
+
+<h3 id="C语言运算符"><a href="#C语言运算符" class="headerlink" title="C语言运算符"></a>C语言运算符</h3><p>c语言有丰富的运算符，但是一串加起来怕是会把你搞懵。每次看到别人这样写自己总是一阵懵，虽说这样写代码的应该拉出去打死，不过看起来确实挺Cool的………废话不多说，开始撸代码~</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">*p += *p &gt;= <span class="string">'a'</span> ? *p + *k &gt; <span class="string">'z'</span> ? *k - <span class="number">26</span> : *k : *p + *k &gt; <span class="string">'Z'</span> ? *k - <span class="number">26</span> : *k;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="四则运算"><a href="#四则运算" class="headerlink" title="四则运算"></a>四则运算</h4><p><kbd>+</kbd>、<kbd>-</kbd>、<kbd>*</kbd>、<kbd>/</kbd></p>
+<p><kbd>a=a+b;</kbd>可以写成<kbd>a+=b;</kbd>、<kbd>a=a*b;</kbd>可以写成<kbd>a*=b;</kbd></p>
+<p>但当写成<kbd>a<em>=b+2;</em></kbd>实际执行的是<kbd>a=a\(b+2);</kbd></p>
+<p><strong>a*=b;只是一种书写形式，不会影响到程序执行效率</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a=<span class="number">10</span>;</span><br><span class="line">	<span class="keyword">int</span> b=<span class="number">2</span>;</span><br><span class="line">	a*=b+<span class="number">2</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,a);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//输出40</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HEXO搭建博客全攻略</title>
     <url>/2019/10/12/HEXO%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%85%A8%E6%94%BB%E7%95%A5/</url>
     <content><![CDATA[<img src="http://pz8wb8fk9.bkt.clouddn.com/static/images/web2.jpg">

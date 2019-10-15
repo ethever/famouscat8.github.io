@@ -56,17 +56,18 @@
   };
 </script>
 
-  <meta name="description" content="我想带一人回云深不知处，带回去，藏起来">
-<meta property="og:type" content="website">
-<meta property="og:title" content="FamousCat">
-<meta property="og:url" content="http://yoursite.com/categories/资源共享/index.html">
+  <meta name="keywords" content="C,C语言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言运算符优先级">
+<meta property="og:url" content="http://yoursite.com/2019/10/13/C语言运算符优先级/index.html">
 <meta property="og:site_name" content="FamousCat">
-<meta property="og:description" content="我想带一人回云深不知处，带回去，藏起来">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://pz8wb8fk9.bkt.clouddn.com/static/images/webyou2.jpg">
+<meta property="og:updated_time" content="2019-10-15T15:02:51.660Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FamousCat">
-<meta name="twitter:description" content="我想带一人回云深不知处，带回去，藏起来">
-  <link rel="canonical" href="http://yoursite.com/categories/资源共享/">
+<meta name="twitter:title" content="C语言运算符优先级">
+<meta name="twitter:image" content="http://pz8wb8fk9.bkt.clouddn.com/static/images/webyou2.jpg">
+  <link rel="canonical" href="http://yoursite.com/2019/10/13/C语言运算符优先级/">
 
 
 <script id="page-configurations">
@@ -74,13 +75,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>分类: 资源共享 | FamousCat</title>
+  <title>C语言运算符优先级 | FamousCat</title>
   
 
 
@@ -301,91 +302,165 @@
         <div class="content-wrap">
             
 
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-  
-
           <div id="content" class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">资源共享
-          <small>分类</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/13/C语言运算符优先级/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FamousCat">
+      <meta itemprop="description" content="我想带一人回云深不知处，带回去，藏起来">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FamousCat">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            C语言运算符优先级
+            
+
+          
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-13 20:44:13" itemprop="dateCreated datePublished" datetime="2019-10-13T20:44:13+08:00">2019-10-13</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-15 23:02:51" itemprop="dateModified" datetime="2019-10-15T23:02:51+08:00">2019-10-15</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+        <img src="http://pz8wb8fk9.bkt.clouddn.com/static/images/webyou2.jpg">
 
-  
-  
+<a id="more"></a>
 
-  
+<h3 id="C语言运算符"><a href="#C语言运算符" class="headerlink" title="C语言运算符"></a>C语言运算符</h3><p>c语言有丰富的运算符，但是一串加起来怕是会把你搞懵。每次看到别人这样写自己总是一阵懵，虽说这样写代码的应该拉出去打死，不过看起来确实挺Cool的………废话不多说，开始撸代码~</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*p += *p &gt;= <span class="string">'a'</span> ? *p + *k &gt; <span class="string">'z'</span> ? *k - <span class="number">26</span> : *k : *p + *k &gt; <span class="string">'Z'</span> ? *k - <span class="number">26</span> : *k;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="四则运算"><a href="#四则运算" class="headerlink" title="四则运算"></a>四则运算</h4><p><kbd>+</kbd>、<kbd>-</kbd>、<kbd>*</kbd>、<kbd>/</kbd></p>
+<p><kbd>a=a+b;</kbd>可以写成<kbd>a+=b;</kbd>、<kbd>a=a*b;</kbd>可以写成<kbd>a*=b;</kbd></p>
+<p>但当写成<kbd>a<em>=b+2;</em></kbd>实际执行的是<kbd>a=a\(b+2);</kbd></p>
+<p><strong>a*=b;只是一种书写形式，不会影响到程序执行效率</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a=<span class="number">10</span>;</span><br><span class="line">	<span class="keyword">int</span> b=<span class="number">2</span>;</span><br><span class="line">	a*=b+<span class="number">2</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,a);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//输出40</span></span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
     
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
-    </div>
+    
+    
+
+<div>
   
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-12T10:39:38+08:00"
-              content="2019-10-12">
-          10-12
-        </time>
-      </div>
-
-      <h2 class="post-title">
+    ﻿<div>
+	
+		<div style="text-align:center;color: #ccc;font-size:14px;">--------本文结束<i class="fa fa-heart"></i>感谢阅读--------</div>
+	
+</div>
+  
+</div>
         
-          <a class="post-title-link" href="/2019/10/12/常用网站，你懂的/" itemprop="url">
-            <span itemprop="name">常用网站，你懂的</span>
-          </a>
-        
-      </h2>
+      
 
-    </header>
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/C/" rel="tag"># C</a>
+            
+              <a href="/tags/C语言/" rel="tag"># C语言</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/10/12/HEXO搭建博客全攻略/" rel="next" title="HEXO搭建博客全攻略">
+                  <i class="fa fa-chevron-left"></i> HEXO搭建博客全攻略
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/10/14/编码系统原理/" rel="prev" title="编码系统原理">
+                  编码系统原理 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    </div>
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
@@ -402,6 +477,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -414,6 +494,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#C语言运算符"><span class="nav-number">1.</span> <span class="nav-text">C语言运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#四则运算"><span class="nav-number">1.1.</span> <span class="nav-text">四则运算</span></a></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
