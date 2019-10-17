@@ -52,7 +52,7 @@
   <entry>
     <title>C语言运算符优先级</title>
     <url>/2019/10/13/C%E8%AF%AD%E8%A8%80%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7/</url>
-    <content><![CDATA[<img src="http://pz8wb8fk9.bkt.clouddn.com/static/images/webyou2.jpg">
+    <content><![CDATA[<img src="http://pz8wb8fk9.bkt.clouddn.com/static/images/webyou2.png">
 
 <a id="more"></a>
 
@@ -62,8 +62,8 @@
 <hr>
 <h4 id="四则运算"><a href="#四则运算" class="headerlink" title="四则运算"></a>四则运算</h4><p><kbd>+</kbd>、<kbd>-</kbd>、<kbd>*</kbd>、<kbd>/</kbd></p>
 <p><kbd>a=a+b;</kbd>可以写成<kbd>a+=b;</kbd>、<kbd>a=a*b;</kbd>可以写成<kbd>a*=b;</kbd></p>
-<p>但当写成<kbd>a<em>=b+2;</em></kbd>实际执行的是<kbd>a=a\(b+2);</kbd></p>
-<p><strong>a*=b;只是一种书写形式，不会影响到程序执行效率</strong></p>
+<p>但当写成<kbd>a*=b+2;</kbd>实际执行的是<kbd>a=a*(b+2);</kbd></p>
+<p><strong>a*=b;只是一种书写形式，并不会影响到程序执行效率</strong></p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a=<span class="number">10</span>;</span><br><span class="line">	<span class="keyword">int</span> b=<span class="number">2</span>;</span><br><span class="line">	a*=b+<span class="number">2</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,a);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//输出40</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
