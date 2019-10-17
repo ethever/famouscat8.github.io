@@ -7,17 +7,19 @@
 
 <a id="more"></a>
 
-<p>周四，晚上，8.20，电子楼S109，单片机最小系统，终于焊好了！<br>首先感谢漂亮的师兄师姐的 <del>淳淳教导</del> 耐心教导，不然是不可能徒手撸单片机的hhhhh…</p>
+<p>周四，晚上，8.20，<font color="#00ff00">电子楼S109</font>，单片机最小系统，终于焊好了！<br>首先感谢漂亮的师兄师姐的 <del>淳淳教导</del> 耐心教导，不然是不可能徒手撸单片机的hhhhh…</p>
+<p>听说Markdown支持直接使用<kbd>Html</kbd>标签？今晚顺便试试，比如<font color="#ff00ff">这样</font></p>
 <h3 id="晶振"><a href="#晶振" class="headerlink" title="晶振"></a>晶振</h3><img src="http://pz8wb8fk9.bkt.clouddn.com/static/images/jz.jpg">
-<p>原来这就是晶振，摸起来冰冰凉凉的，真的是太有金属感了（–^ -^-<del>这原本不就是金属吗？</del>）<br>它的作用？师姐说它是单片机的心脏，虽然我知道这是骗人的，单片机怎么可能有心脏呢? 不过真形象的比喻，emmmm目前我的理解就是它为单片机里的虚拟世界提供一个时间，驱动单片机运行。</p>
+<p>原来这就是晶振，摸起来冰冰凉凉的，真的是太有金属感了（–^ -^-<del>这原本不就是金属吗？</del>）<br>它的作用？师姐说它是单片机的心脏，虽然我知道这是骗人的，单片机怎么可能有<font color="#ff0000">心脏</font>呢? 不过真形象的比喻，emmmm目前我的理解就是它为单片机里的虚拟世界提供一个时间，驱动单片机运行。</p>
 <h3 id="今晚的电路图"><a href="#今晚的电路图" class="headerlink" title="今晚的电路图"></a>今晚的电路图</h3><p>眼花缭乱</p>
 <img src="http://pz8wb8fk9.bkt.clouddn.com/static/images/dlt.png">
-<p>听说发光二极管画错了？师姐的错，（嘿嘿嘿）不过师姐很可爱地道歉了。</p>
+<p>听说<font color="#ff0000">发光二极管</font>画错了？师姐的错，（嘿嘿嘿）不过师姐<font color="#000000">很可爱地</font>道歉了。</p>
 <h3 id="六角自锁开关"><a href="#六角自锁开关" class="headerlink" title="六角自锁开关"></a>六角自锁开关</h3><p>不拍实物图了（<del>懒</del>）原理图代替，就假装看到了实物图</p>
 <img src="http://pz8wb8fk9.bkt.clouddn.com/static/images/ljkg.jpg">
 
-<h3 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h3><img src="http://pz8wb8fk9.bkt.clouddn.com/static/images/dpj.jpg">
-<p>还差一点，差一点就焊完了。。焊完后连接电脑烧入程序就可以运行了。</p>
+<h3 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h3><p>第一个手撸单片机，相信以后还会有第二个，第三个，emmmm，不过头发是个问题</p>
+<img src="http://pz8wb8fk9.bkt.clouddn.com/static/images/dpj.jpg">
+<p>一个小时你焊得完吗？<br>大脑：可以的，肯定可以。<br>手：你放屁<br>啊啊啊还差一点，差一点就焊完了。。焊完后连接电脑烧入程序就可以运行了。<br>又成功水了一天</p>
 ]]></content>
       <categories>
         <category>单片机</category>
@@ -83,6 +85,27 @@
 <a id="more"></a>
 
 
+
+<h3 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h3><ul>
+<li><p>git（推荐官网下载，或者点击<a herf="https://www.lanzous.com/i6su13i ">这里</a>下载Git2.23.0-64bit.</p>
+</li>
+<li><p>github账号(没有的话去<a herf="https://www.github.com">注册</a>一个)</p>
+</li>
+<li><p>安装了node.js、npm</p>
+</li>
+<li><p>域名（可选）</p>
+</li>
+</ul>
+<h3 id="能学到什么"><a href="#能学到什么" class="headerlink" title="能学到什么"></a>能学到什么</h3><ol>
+<li>github的使用，如何用GitHub维护一个项目</li>
+<li>git命令行</li>
+<li>使用markdown写文章 </li>
+<li>域名是什么</li>
+</ol>
+<h3 id="在github上创建仓库"><a href="#在github上创建仓库" class="headerlink" title="在github上创建仓库"></a>在github上创建仓库</h3><ol>
+<li>注册GitHub账号，注意：邮箱必须验证</li>
+<li>新建一个名为<kbd>你的用户名.github.io</kbd>的仓库，比如，你的用户名是mnt，那么你就新建<kbd>mnt.github.io</kbd>的仓库，其他的名称无效，以后访问你博客的地址就是<a href="http://mnt.github.io" target="_blank" rel="noopener">http://mnt.github.io</a></li>
+</ol>
 <h3 id="导航栏添加分类和标签"><a href="#导航栏添加分类和标签" class="headerlink" title="导航栏添加分类和标签"></a>导航栏添加分类和标签</h3><p>实现如下分类和标签的功能：</p>
 <img src="http://pz8wb8fk9.bkt.clouddn.com/static/images/dhl.jpg">
 
