@@ -80,24 +80,6 @@
       </tags>
   </entry>
   <entry>
-    <title>绝对值不等式</title>
-    <url>/2019/10/15/%E7%BB%9D%E5%AF%B9%E5%80%BC%E4%B8%8D%E7%AD%89%E5%BC%8F/</url>
-    <content><![CDATA[<p>$$<br>||a|-|b||&lt;=|a+b|&lt;=|a|+|b|<br>$$</p>
-<p>$$<br>||a|-|b||&lt;=|a-b|&lt;=|a|+|b|<br>$$</p>
-<p>$$<br>sin x &lt; x &lt; tan x   </p>
-<p>0&lt;x&lt;(pi/2)<br>$$</p>
-]]></content>
-      <categories>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>数学</tag>
-        <tag>高数</tag>
-        <tag>绝对值</tag>
-        <tag>不等式</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>编码系统原理</title>
     <url>/2019/10/14/%E7%BC%96%E7%A0%81%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/</url>
     <content><![CDATA[]]></content>
@@ -124,8 +106,8 @@
         <category>C语言</category>
       </categories>
       <tags>
-        <tag>C</tag>
         <tag>C语言</tag>
+        <tag>C</tag>
       </tags>
   </entry>
   <entry>
@@ -265,7 +247,7 @@
 <h3 id="PPT"><a href="#PPT" class="headerlink" title="PPT"></a>PPT</h3><h5 id="优品PPT"><a href="#优品PPT" class="headerlink" title="优品PPT"></a><a href="http://www.ypppt.com" target="_blank" rel="noopener">优品PPT</a></h5><p>   目前全免费，点击即可下载，无需登录，少量广告，不影响阅读。最重要的是PPT质量非常高。</p>
 <img src="http://pz8wb8fk9.bkt.clouddn.com/static/images/ypppt.jpg">
 
-<h4 id="图片操作"><a href="#图片操作" class="headerlink" title="图片操作"></a>图片操作</h4><h5 id="AI图片放大"><a href="#AI图片放大" class="headerlink" title="AI图片放大"></a><a href="http://bigjpg.com/zh" target="_blank" rel="noopener">AI图片放大</a></h5><p>   通过Ai技术让图片尽可能放大，目前最大支持16X，想要获得高分辨率就快去试试吧！</p>
+<h5 id="中国色配色网站"><a href="#中国色配色网站" class="headerlink" title="中国色配色网站"></a><a href="http://zhongguose.com" target="_blank" rel="noopener">中国色配色网站</a></h5><h4 id="图片操作"><a href="#图片操作" class="headerlink" title="图片操作"></a>图片操作</h4><h5 id="AI图片放大"><a href="#AI图片放大" class="headerlink" title="AI图片放大"></a><a href="http://bigjpg.com/zh" target="_blank" rel="noopener">AI图片放大</a></h5><p>   通过Ai技术让图片尽可能放大，目前最大支持16X，想要获得高分辨率就快去试试吧！</p>
 <img src="http://pz8wb8fk9.bkt.clouddn.com/static/images/aifd.jpg">
 
 <h4 id="文件共享"><a href="#文件共享" class="headerlink" title="文件共享"></a>文件共享</h4><h5 id="拷贝兔"><a href="#拷贝兔" class="headerlink" title="拷贝兔"></a><a href="https://cp.anyknew.com" target="_blank" rel="noopener">拷贝兔</a></h5><p>   临时共享文件的网站，一次最大200M，可微信登陆，支持阅后即焚。</p>
@@ -279,6 +261,9 @@
 <h3 id="项目开源"><a href="#项目开源" class="headerlink" title="项目开源"></a>项目开源</h3><h5 id="github"><a href="#github" class="headerlink" title="github"></a><a href="https://www.github.com" target="_blank" rel="noopener">github</a></h5><h5 id="开源中国"><a href="#开源中国" class="headerlink" title="开源中国"></a><a href="https://www.oschina.net/" target="_blank" rel="noopener">开源中国</a></h5><h5 id="码云"><a href="#码云" class="headerlink" title="码云"></a><a href="https://gitee.com" target="_blank" rel="noopener">码云</a></h5><h3 id="在线工具"><a href="#在线工具" class="headerlink" title="在线工具"></a>在线工具</h3><h5 id="爱资料工具"><a href="#爱资料工具" class="headerlink" title="爱资料工具"></a><a href="https://www.toolnb.com/" target="_blank" rel="noopener">爱资料工具</a></h5><p>   爱资料在线工具，为开发运维提供全面的在线工具箱，目前已开发工具270款，包含开发工具、运维工具、常用工具、SEO站长工具等，是好用，方便的在线工具网站。</p>
 <h5 id="菜鸟工具"><a href="#菜鸟工具" class="headerlink" title="菜鸟工具"></a><a href="https://c.runoob.com/" target="_blank" rel="noopener">菜鸟工具</a></h5><p>   支持各种代码在线编辑运行。</p>
 <p>好了，目前就这么多，以后找到好用的网站再更新吧~嘿嘿嘿</p>
+<p>10.18更新</p>
+<h5 id="免费图标网站"><a href="#免费图标网站" class="headerlink" title="免费图标网站"></a><a href="https://www.flaticon.com" target="_blank" rel="noopener">免费图标网站</a></h5><h3 id="视频音乐解析"><a href="#视频音乐解析" class="headerlink" title="视频音乐解析"></a>视频音乐解析</h3><h5 id="视频鱼"><a href="#视频鱼" class="headerlink" title="视频鱼"></a><a href="http://www.shipinyu.com" target="_blank" rel="noopener">视频鱼</a></h5><p>可以解析出非常多种类型的视频，无广告，免费</p>
+<h5 id="唧唧"><a href="#唧唧" class="headerlink" title="唧唧"></a><a href="https://www.jijidown.com" target="_blank" rel="noopener">唧唧</a></h5><p>一个专门用来解析b站视频的网站</p>
 ]]></content>
       <categories>
         <category>资源共享</category>
@@ -465,25 +450,5 @@
         <tag>进制</tag>
         <tag>汇编</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2019/10/05/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
   </entry>
 </search>
