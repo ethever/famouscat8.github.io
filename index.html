@@ -309,6 +309,219 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/20/常用寄存器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FamousCat">
+      <meta itemprop="description" content="我想带一人回云深不知处，带回去，藏起来">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FamousCat">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            
+            <a href="/2019/10/20/常用寄存器/" class="post-title-link" itemprop="url">常用寄存器</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-20 00:36:45 / 修改时间：00:51:19" itemprop="dateCreated datePublished" datetime="2019-10-20T00:36:45+08:00">2019-10-20</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/汇编学习/" itemprop="url" rel="index">
+                    <span itemprop="name">汇编学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="EAP"><a href="#EAP" class="headerlink" title="EAP"></a>EAP</h3>
+        
+      
+    </div>
+
+    
+    
+    
+
+<div>
+  
+</div>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/19/汇编常用指令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FamousCat">
+      <meta itemprop="description" content="我想带一人回云深不知处，带回去，藏起来">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FamousCat">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            
+            <a href="/2019/10/19/汇编常用指令/" class="post-title-link" itemprop="url">汇编常用指令</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-19 23:55:18" itemprop="dateCreated datePublished" datetime="2019-10-19T23:55:18+08:00">2019-10-19</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-20 00:58:24" itemprop="dateModified" datetime="2019-10-20T00:58:24+08:00">2019-10-20</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/汇编学习/" itemprop="url" rel="index">
+                    <span itemprop="name">汇编学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>堆栈：特殊地内存区</p>
+<h3 id="MOV"><a href="#MOV" class="headerlink" title="MOV:"></a>MOV:</h3><p>MOV EAP,ESP<br>MOV EAP,DWORD PR DS:[0X00ff00ff]</p>
+<h3 id="SUB"><a href="#SUB" class="headerlink" title="SUB:"></a>SUB:</h3><h3 id="PUSH"><a href="#PUSH" class="headerlink" title="PUSH:"></a>PUSH:</h3><p><strong>作用</strong>：将数据压入堆栈，并且将栈顶指针向上移动相应的位数。<br>比如<kbd>PUSH AX</kbd>，AX是<font color="#ff0000">16</font>位的，每个内存单元是一字节，即<font color="#ff0000">8</font>位，所以将十六位的AX存入堆栈时，会占用堆栈<font color="#ff0000">16位（即2字节）</font>的空间，所以栈顶指针要向上移动<font color="#ff0000">2</font>位，即ESP减少<font color="#ff0000">4</font>；再比如<kbd>PUSH EAX</kbd>，表示将<font color="#ff0000">32</font>位的EAX中的数据压入堆栈中，这些数据去将占用<font color="#ff0000">32/8=4</font>个内存单元，所以栈顶指针要向上移动<font color="#ff0000">4</font>位。</p>
+<p>用法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">PUSH r32</span><br><span class="line">PUSH r16</span><br><span class="line">PUSH m16</span><br><span class="line">PUSH m32</span><br><span class="line">PUSH imm8/imm16/imm32</span><br><span class="line"></span><br><span class="line">PUSH WORD PTR DS:[12FFDA] </span><br><span class="line">//WORD 表示该内存是两字节的，所以执行这条指令时，</span><br><span class="line">//栈顶指针向上移动2位。</span><br><span class="line"></span><br><span class="line">PUSH DWORD PTR DS:[12FFDA]</span><br><span class="line">//DWORD 表示该内存是4字节的，所以执行这条1指令时，</span><br><span class="line">//栈顶指针向上移动4位。</span><br></pre></td></tr></table></figure>
+
+<p>注意：不允许PUSH r8，为什么？因为官方没有定义这条指令</p>
+<h3 id="POP"><a href="#POP" class="headerlink" title="POP:"></a>POP:</h3><p><strong>作用</strong>：从堆栈中取值，放入容器中。</p>
+<p>用法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">POP r32</span><br><span class="line">POP r16</span><br><span class="line">POP m16</span><br><span class="line">POP m32</span><br></pre></td></tr></table></figure>
+
+<h3 id="PUSHAD"><a href="#PUSHAD" class="headerlink" title="PUSHAD:"></a>PUSHAD:</h3><p><strong>作用</strong>：将寄存器中的值全部压入堆栈，可以形象地理解为“保护现场”。</p>
+<h3 id="POPAD"><a href="#POPAD" class="headerlink" title="POPAD:"></a>POPAD:</h3><p><strong>作用</strong>：PUSHAD压入堆栈的值全部取出来，重新放入寄存器，可以形象地理解为“恢复现场”。</p>
+<h3 id="逆向汇编学习目录"><a href="#逆向汇编学习目录" class="headerlink" title="逆向汇编学习目录"></a>逆向汇编学习目录</h3><ol>
+<li>学习PE</li>
+<li>下断点</li>
+<li>win32 api</li>
+<li>什么是函数堆栈</li>
+<li>熟悉堆栈-画堆栈图</li>
+<li>CALL是什么，JE是什么，标志寄存器是什么</li>
+</ol>
+
+        
+      
+    </div>
+
+    
+    
+    
+
+<div>
+  
+</div>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/18/C语言指针/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -595,6 +808,110 @@
             </div>
           
           <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+<div>
+  
+</div>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/15/绝对值不等式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FamousCat">
+      <meta itemprop="description" content="我想带一人回云深不知处，带回去，藏起来">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FamousCat">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            
+            <a href="/2019/10/15/绝对值不等式/" class="post-title-link" itemprop="url">绝对值不等式</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-15 10:54:14" itemprop="dateCreated datePublished" datetime="2019-10-15T10:54:14+08:00">2019-10-15</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-19 23:56:31" itemprop="dateModified" datetime="2019-10-19T23:56:31+08:00">2019-10-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数学/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>$$<br>||a|-|b||&lt;=|a+b|&lt;=|a|+|b|<br>$$</p>
+<p>$$<br>||a|-|b||&lt;=|a-b|&lt;=|a|+|b|<br>$$</p>
+<p>$$<br>sin x &lt; x &lt; tan x   </p>
+<p>0&lt;x&lt;(pi/2)<br>$$</p>
+
         
       
     </div>
@@ -1026,101 +1343,12 @@
   
 
     
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/11/什么是进制？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FamousCat">
-      <meta itemprop="description" content="我想带一人回云深不知处，带回去，藏起来">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="FamousCat">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            
-            <a href="/2019/10/11/什么是进制？/" class="post-title-link" itemprop="url">什么是进制？</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-10-11 14:29:50" itemprop="dateCreated datePublished" datetime="2019-10-11T14:29:50+08:00">2019-10-11</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-13 00:56:02" itemprop="dateModified" datetime="2019-10-13T00:56:02+08:00">2019-10-13</time>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="为什么要学习进制？"><a href="#为什么要学习进制？" class="headerlink" title="为什么要学习进制？"></a>为什么要学习进制？</h4><p>计算机只认识0和1，如果我们想更好地学习计算机，就必须理解进制是什么，数字是什么。</p>
-          <!--noindex-->
-          
-            <div class="post-button">
-              <a class="btn" href="/2019/10/11/什么是进制？/" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-<div>
-  
-</div>
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </article>
-  
-  
-  
-
-    
   </div>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -1167,7 +1395,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1180,7 +1408,7 @@
             <a href="/categories/">
           
         
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -1193,7 +1421,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -1278,7 +1506,7 @@ setInterval("createtime()",250);
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">3.5k</span> 字
+      博客全站共： <span class="post-count">3.9k</span> 字
     </span>
 </div>
 
