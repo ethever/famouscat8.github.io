@@ -9,8 +9,8 @@
       </categories>
       <tags>
         <tag>汇编</tag>
-        <tag>汇编指令</tag>
         <tag>寄存器</tag>
+        <tag>汇编指令</tag>
       </tags>
   </entry>
   <entry>
@@ -172,8 +172,8 @@
         <category>C语言</category>
       </categories>
       <tags>
-        <tag>C</tag>
         <tag>C语言</tag>
+        <tag>C</tag>
       </tags>
   </entry>
   <entry>
