@@ -19,6 +19,8 @@
     <content><![CDATA[<p>堆栈：特殊地内存区</p>
 <h3 id="MOV"><a href="#MOV" class="headerlink" title="MOV:"></a>MOV:</h3><p>MOV EAP,ESP<br>MOV EAP,DWORD PR DS:[0X00ff00ff]</p>
 <h3 id="SUB"><a href="#SUB" class="headerlink" title="SUB:"></a>SUB:</h3><h3 id="PUSH"><a href="#PUSH" class="headerlink" title="PUSH:"></a>PUSH:</h3><p><strong>作用</strong>：将数据压入堆栈，并且将栈顶指针向上移动相应的位数。<br>比如<kbd>PUSH AX</kbd>，AX是<font color="#ff0000">16</font>位的，每个内存单元是一字节，即<font color="#ff0000">8</font>位，所以将十六位的AX存入堆栈时，会占用堆栈<font color="#ff0000">16位（即2字节）</font>的空间，所以栈顶指针要向上移动<font color="#ff0000">2</font>位，即ESP减少<font color="#ff0000">4</font>；再比如<kbd>PUSH EAX</kbd>，表示将<font color="#ff0000">32</font>位的EAX中的数据压入堆栈中，这些数据去将占用<font color="#ff0000">32/8=4</font>个内存单元，所以栈顶指针要向上移动<font color="#ff0000">4</font>位。</p>
+<a id="more"></a>
+
 <p>用法：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">PUSH r32</span><br><span class="line">PUSH r16</span><br><span class="line">PUSH m16</span><br><span class="line">PUSH m32</span><br><span class="line">PUSH imm8/imm16/imm32</span><br><span class="line"></span><br><span class="line">PUSH WORD PTR DS:[12FFDA] </span><br><span class="line">//WORD 表示该内存是两字节的，所以执行这条指令时，</span><br><span class="line">//栈顶指针向上移动2位。</span><br><span class="line"></span><br><span class="line">PUSH DWORD PTR DS:[12FFDA]</span><br><span class="line">//DWORD 表示该内存是4字节的，所以执行这条1指令时，</span><br><span class="line">//栈顶指针向上移动4位。</span><br></pre></td></tr></table></figure>
 
@@ -90,10 +92,10 @@
         <category>位运算</category>
       </categories>
       <tags>
+        <tag>C语言</tag>
         <tag>位运算</tag>
         <tag>二进制</tag>
         <tag>高效运算</tag>
-        <tag>C语言</tag>
         <tag>算法</tag>
       </tags>
   </entry>
@@ -170,8 +172,8 @@
         <category>C语言</category>
       </categories>
       <tags>
-        <tag>C语言</tag>
         <tag>C</tag>
+        <tag>C语言</tag>
       </tags>
   </entry>
   <entry>

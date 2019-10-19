@@ -64,7 +64,7 @@
 <meta property="og:site_name" content="FamousCat">
 <meta property="og:description" content="堆栈：特殊地内存区 MOV:MOV EAP,ESPMOV EAP,DWORD PR DS:[0X00ff00ff] SUB:PUSH:作用：将数据压入堆栈，并且将栈顶指针向上移动相应的位数。比如PUSH AX，AX是16位的，每个内存单元是一字节，即8位，所以将十六位的AX存入堆栈时，会占用堆栈16位（即2字节）的空间，所以栈顶指针要向上移动2位，即ESP减少4；再比如PUSH EAX，表示将32">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-19T16:58:24.132Z">
+<meta property="og:updated_time" content="2019-10-19T17:01:29.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="汇编常用指令">
 <meta name="twitter:description" content="堆栈：特殊地内存区 MOV:MOV EAP,ESPMOV EAP,DWORD PR DS:[0X00ff00ff] SUB:PUSH:作用：将数据压入堆栈，并且将栈顶指针向上移动相应的位数。比如PUSH AX，AX是16位的，每个内存单元是一字节，即8位，所以将十六位的AX存入堆栈时，会占用堆栈16位（即2字节）的空间，所以栈顶指针要向上移动2位，即ESP减少4；再比如PUSH EAX，表示将32">
@@ -353,7 +353,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-20 00:58:24" itemprop="dateModified" datetime="2019-10-20T00:58:24+08:00">2019-10-20</time>
+                <time title="修改时间：2019-10-20 01:01:29" itemprop="dateModified" datetime="2019-10-20T01:01:29+08:00">2019-10-20</time>
               </span>
             
           
@@ -389,6 +389,8 @@
         <p>堆栈：特殊地内存区</p>
 <h3 id="MOV"><a href="#MOV" class="headerlink" title="MOV:"></a>MOV:</h3><p>MOV EAP,ESP<br>MOV EAP,DWORD PR DS:[0X00ff00ff]</p>
 <h3 id="SUB"><a href="#SUB" class="headerlink" title="SUB:"></a>SUB:</h3><h3 id="PUSH"><a href="#PUSH" class="headerlink" title="PUSH:"></a>PUSH:</h3><p><strong>作用</strong>：将数据压入堆栈，并且将栈顶指针向上移动相应的位数。<br>比如<kbd>PUSH AX</kbd>，AX是<font color="#ff0000">16</font>位的，每个内存单元是一字节，即<font color="#ff0000">8</font>位，所以将十六位的AX存入堆栈时，会占用堆栈<font color="#ff0000">16位（即2字节）</font>的空间，所以栈顶指针要向上移动<font color="#ff0000">2</font>位，即ESP减少<font color="#ff0000">4</font>；再比如<kbd>PUSH EAX</kbd>，表示将<font color="#ff0000">32</font>位的EAX中的数据压入堆栈中，这些数据去将占用<font color="#ff0000">32/8=4</font>个内存单元，所以栈顶指针要向上移动<font color="#ff0000">4</font>位。</p>
+<a id="more"></a>
+
 <p>用法：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">PUSH r32</span><br><span class="line">PUSH r16</span><br><span class="line">PUSH m16</span><br><span class="line">PUSH m32</span><br><span class="line">PUSH imm8/imm16/imm32</span><br><span class="line"></span><br><span class="line">PUSH WORD PTR DS:[12FFDA] </span><br><span class="line">//WORD 表示该内存是两字节的，所以执行这条指令时，</span><br><span class="line">//栈顶指针向上移动2位。</span><br><span class="line"></span><br><span class="line">PUSH DWORD PTR DS:[12FFDA]</span><br><span class="line">//DWORD 表示该内存是4字节的，所以执行这条1指令时，</span><br><span class="line">//栈顶指针向上移动4位。</span><br></pre></td></tr></table></figure>
 
