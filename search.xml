@@ -16,8 +16,12 @@
   <entry>
     <title>汇编常用指令</title>
     <url>/2019/10/19/%E6%B1%87%E7%BC%96%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
-    <content><![CDATA[<p>堆栈：特殊地内存区</p>
-<h3 id="MOV"><a href="#MOV" class="headerlink" title="MOV:"></a>MOV:</h3><p>MOV EAP,ESP<br>MOV EAP,DWORD PR DS:[0X00ff00ff]</p>
+    <content><![CDATA[<p>没有代码量的人很难懂代码的复用，实质上，所有面向对象的语言，它的出发点只有一个，它的本质只有一个，减少代码的重复，增加代码的复用。</p>
+<p>堆栈：特殊地内存区</p>
+<p>加法减法没有本质区别</p>
+<p>不存在进位</p>
+<p>明确数据宽度</p>
+<h3 id="MOV"><a href="#MOV" class="headerlink" title="MOV:"></a>MOV:</h3><p>MOV EAP,ESP<br>MOV EAP,DWORD PTR DS:[0X00ff00ff]</p>
 <h3 id="SUB"><a href="#SUB" class="headerlink" title="SUB:"></a>SUB:</h3><h3 id="PUSH"><a href="#PUSH" class="headerlink" title="PUSH:"></a>PUSH:</h3><p><strong>作用</strong>：将数据压入堆栈，并且将栈顶指针向上移动相应的位数。<br>比如<kbd>PUSH AX</kbd>，AX是<font color="#ff0000">16</font>位的，每个内存单元是一字节，即<font color="#ff0000">8</font>位，所以将十六位的AX存入堆栈时，会占用堆栈<font color="#ff0000">16位（即2字节）</font>的空间，所以栈顶指针要向上移动<font color="#ff0000">2</font>位，即ESP减少<font color="#ff0000">4</font>；再比如<kbd>PUSH EAX</kbd>，表示将<font color="#ff0000">32</font>位的EAX中的数据压入堆栈中，这些数据去将占用<font color="#ff0000">32/8=4</font>个内存单元，所以栈顶指针要向上移动<font color="#ff0000">4</font>位。</p>
 <a id="more"></a>
 
@@ -31,13 +35,157 @@
 
 <h3 id="PUSHAD"><a href="#PUSHAD" class="headerlink" title="PUSHAD:"></a>PUSHAD:</h3><p><strong>作用</strong>：将寄存器中的值全部压入堆栈，可以形象地理解为“保护现场”。</p>
 <h3 id="POPAD"><a href="#POPAD" class="headerlink" title="POPAD:"></a>POPAD:</h3><p><strong>作用</strong>：PUSHAD压入堆栈的值全部取出来，重新放入寄存器，可以形象地理解为“恢复现场”。</p>
-<h3 id="逆向汇编学习目录"><a href="#逆向汇编学习目录" class="headerlink" title="逆向汇编学习目录"></a>逆向汇编学习目录</h3><ol>
-<li>学习PE</li>
+<h3 id="逆向汇编学习路程"><a href="#逆向汇编学习路程" class="headerlink" title="逆向汇编学习路程"></a>逆向汇编学习路程</h3><ol>
+<li>学习PE，PE结构对学习指针非常有好处</li>
 <li>下断点</li>
 <li>win32 api</li>
 <li>什么是函数堆栈</li>
 <li>熟悉堆栈-画堆栈图</li>
 <li>CALL是什么，JE是什么，标志寄存器是什么</li>
+<li>c语言的逆向</li>
+</ol>
+<h3 id="EFLAGS标志寄存器"><a href="#EFLAGS标志寄存器" class="headerlink" title="EFLAGS标志寄存器"></a>EFLAGS标志寄存器</h3><p>EFLAGS标志寄存器，简称EFL寄存器，里面存储一个32位的值，其中每一位都有不同的意义。</p>
+<p>划重点，考试会考，背下来</p>
+<table>
+<thead>
+<tr>
+<th align="center">31</th>
+<th align="center">…</th>
+<th align="center">22</th>
+<th>21</th>
+<th>20</th>
+<th>19</th>
+<th>18</th>
+<th>17</th>
+<th>16</th>
+<th align="center">15</th>
+<th align="center">14</th>
+<th align="center">13</th>
+<th align="center">12</th>
+<th align="center">11</th>
+<th>10</th>
+<th>9</th>
+<th>8</th>
+<th>7</th>
+<th>6</th>
+<th>5</th>
+<th>4</th>
+<th>3</th>
+<th>2</th>
+<th>1</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>查看DTDEBUG中的EFLAGS的值，然后转换成二进制，并取出CF/PF/AF/ZF/SF/OF的值</p>
+<p>记住这几个寄存器的名称</p>
+<ol>
+<li>进位标志CF(Carry Flag)：如果运算结果的最高位产生了一个<font color="#ff0000">进位或者借位</font>，那么，其值为<font color="#ff0000">1</font>，否则为<font color="#ff0000">0</font>。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">MOV EAX,<span class="number">5555F</span>FFF</span><br><span class="line">ADD EAX,<span class="number">1</span></span><br><span class="line"><span class="comment">//运算后EAX==55560000</span></span><br><span class="line"><span class="comment">//EAX最高位数据没有产生变化，CF标志位不变</span></span><br><span class="line"></span><br><span class="line">MOV AL,<span class="number">0XFF</span><span class="comment">//EAX==555600FF，AL明确数据宽度，CF只检查8位数据</span></span><br><span class="line">ADD AL,<span class="number">1</span></span><br><span class="line"><span class="comment">//EAX中的8位寄存器进行+1操作，</span></span><br><span class="line"><span class="comment">//奈何EAX中的AX已是满数据，所以+1后会发生数据溢出，</span></span><br><span class="line"><span class="comment">//溢出的数据保存在CF标志位中</span></span><br><span class="line"><span class="comment">//运算后EAX==55560000</span></span><br><span class="line"><span class="comment">//AX最高位发生变化，CF标志位改变为1</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>奇偶标志位PF(Parity Flag)：奇偶标志PF用于反映运算结果中“1”的个数的奇偶性，如果“1”的个数为偶数，则PF的值为1，否则为0。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">MOV AL,<span class="number">3</span><span class="comment">//0000 0011</span></span><br><span class="line">ADD AL,<span class="number">3</span><span class="comment">//0000 0011--&gt;0000 0110，有两个1，奇标志位PF变成1</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>辅助进位标志AF(Auxiliary Carry Flag)：在发生下列情况时，辅助进位标志AF的值改变为1，否则为0。<ul>
+<li>在字操作时，发生低字节向高字节进位或借位时；</li>
+<li>在字节操作时，发生低4位向高4位进位或借位时。</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">MOV EAX,<span class="number">0X55EEFFFF</span></span><br><span class="line">ADD EAX,<span class="number">2</span><span class="comment">//AF发生变化，改变为1</span></span><br><span class="line"></span><br><span class="line">MOV AX,<span class="number">5</span>EFE</span><br><span class="line">ADD AX,<span class="number">2</span><span class="comment">//AF变为1</span></span><br><span class="line"></span><br><span class="line">MOV AL,<span class="number">4</span>E</span><br><span class="line">ADD AL,<span class="number">2</span><span class="comment">//A不变</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>零标志位(Zero Flag)：零标志ZF用来反映运算结果是否为0。如果运算结果为0，其值为1，否则为0。此标志位可用于判断运算结果是否为0。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">XOR EAX,EAX</span><br><span class="line"></span><br><span class="line">MOV EAX,<span class="number">2</span></span><br><span class="line">SUB EAX,<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>符号标志位</li>
 </ol>
 ]]></content>
       <categories>
@@ -172,8 +320,8 @@
         <category>C语言</category>
       </categories>
       <tags>
-        <tag>C语言</tag>
         <tag>C</tag>
+        <tag>C语言</tag>
       </tags>
   </entry>
   <entry>
@@ -513,8 +661,8 @@
 <p>用二进制从0写到1111<br>0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111<br>这种二进制使用起来太麻烦，改成更简单一点的符号：<br>0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F<br>这就是十六进制了，中国古代的时候就已经使用十六进制。</p>
 ]]></content>
       <tags>
-        <tag>进制</tag>
         <tag>汇编</tag>
+        <tag>进制</tag>
       </tags>
   </entry>
 </search>
