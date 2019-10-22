@@ -1,10 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>[转载]关于封装--一个有趣的C++例子</title>
+    <url>/2019/10/23/%E8%BD%AC%E8%BD%BD-%E5%85%B3%E4%BA%8E%E5%B0%81%E8%A3%85-%E4%B8%80%E4%B8%AA%E6%9C%89%E8%B6%A3%E7%9A%84C-%E4%BE%8B%E5%AD%90/</url>
+    <content><![CDATA[<p>版权声明：本文为CSDN博主「zdleek」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/baodi_z/article/details/210432" target="_blank" rel="noopener">https://blog.csdn.net/baodi_z/article/details/210432</a></p>
+<p>  一个有趣的现象，摘自CSDN 吹云Blog《C++从零开始（十二）——何谓面向对象编程思想》原文<a href="http://blog.csdn.net/chuiyun/archive/2004/11/26/194722.aspx。" target="_blank" rel="noopener">http://blog.csdn.net/chuiyun/archive/2004/11/26/194722.aspx。</a></p>
+<a id="more"></a>
+<pre><code>之所以摘录这段文章，是因为我奇怪下面的例子竟然真的能够编译通过--在引用的文件中篡改类的private为public就可以直接访问私有变量，而且能够正常访问和赋值。
+下面是摘录的原文，有兴趣的朋友不妨也试试编个代码试验一下。</code></pre><hr>
+<p>封装</p>
+<pre><code>先来看现在在各类VC教程中关于对象的讲解中经常能看见的如下的一个类的设计。
+class Person
+{ private: char m_Name[20]; unsigned long m_Age; bool m_Sex;
+  public:  const char* GetName() const;  void SetName( const char* );
+           unsigned long GetAge() const; void SetAge( unsigned long );
+           bool GetSex() const;          void SetSex( bool );
+};
+上面将成员变量全部定义为private，然后又提供三对Get/Set函数来存取上面的三个成员变量（因为它们是private，外界不能直接存取），这三对函数都是public的，为什么要这样？那些教材将此称作封装，是对类Person的内部内存布局的封装，这样外界就不知道其在内存上是如何布局的并进而可以保证内存的有效性（只由类自身操作其实例）。
+首先要确认上面设计的荒谬性，它是正宗的“有门没锁”毫无意义。接着再看所谓的对内存布局的封装。回想在《C++从零开始（十）》中说的为什么每个要使用类的源文件的开头要包含相应的头文件。假设上面是在Person.h中的声明，然后在b.cpp中要使用类Person，本来要#include &quot;Person.h&quot;，现在替换成下面：
+class Person
+{ public: char m_Name[20]; unsigned long m_Age; bool m_Sex;
+  public: const char* GetName() const;  void SetName( const char* );
+          unsigned long GetAge() const; void SetAge( unsigned long );
+          bool GetSex() const;          void SetSex( bool );
+};
+然后在b.cpp中照常使用类Person，如下：
+Person a, b; a.m_Age = 20; b.GetSex();
+这里就直接使用了Person::m_Age了，就算不做这样蹩脚的动作，依旧#include &quot;Person.h&quot;，如下：
+struct PERSON { char m_Name[20]; unsigned long m_Age; bool m_Sex; };
+Person a, b; PERSON *pP = ( PERSON* )&amp;a; pP-&gt;m_Age = 40;
+上面依旧直接修改了Person的实例a的成员Person::m_Age，如何能隐藏内存布局？！请回想声明的作用，类的内存布局是编译器生成对象时必须的，根本不能对任何使用对象的代码隐藏有关对象实现的任何东西，否则编译器无法编译相应的代码。
+那么从语义上来看。Person映射的不是真实世界中的人的概念，应该是存放某个数据库中的某个记录人员信息的表中的记录的缓冲区，那么缓冲区应该具备那三对Get/Set所代表的功能吗？缓冲区是缓冲数据用的，缓冲后被其它操作使用，就好像箱子，只是放东西用。故上面的三对Get/Set没有存在的必要，而三个成员变量则不能是private。当然，如果Person映射的并不是缓冲区，而在其它的世界中具备像上面那样表现的语义，则像上面那样定义就没有问题，但如果是因为对内存布局的封装而那样定义类则是大错特错的。
+上面错误的根本在于没有理解何谓封装。为了说明封装，先看下MFC（Microsoft Foundation Class Library——微软功能类库，一个定义了许多类的库文件，其中的绝大部分类是封装设计。关于库文件在说明SDK时阐述）中的类CFile的定义。从名字就可看出它映射的是操作系统中文件的概念，但它却有这样的成员函数——CFile::Open、CFile::Close、CFile::Read、CFile::Write，有什么问题？这四个成员函数映射的都是对文件的操作而不是文件所具备的功能，分别为打开文件、关闭文件、从文件读数据、向文件写数据。这不是和前面说的成员函数的语义相背吗？上面四个操作有个共性，都是施加于文件这个资源上的操作，可以将它们叫做“被功能”，如文件具有“被打开”的功能，具有“被读取”的功能，但应注意它们实际并不是文件的功能。
+按照原来的说法，应该将文件映射为一个结构，如FILE，然后上面的四个操作应映射成四个函数，再利用名字空间的功能，如下：
+namespace OFILE
+{
+    bool Open( FILE&amp;, … );  bool Close( FILE&amp;, … );
+    bool Read( FILE&amp;, … );  bool Write( FILE&amp;, … );
+}
+上面的名字空间OFILE表示里面的四个函数都是对文件的操作，但四个函数都带有一个FILE&amp;的参数。回想非静态成员函数都有个隐藏的参数this，因此，一个了不起的想法诞生了。
+将所有对某种资源的操作的集合看成是一种资源，把它映射成一个类，则这个类的对象就是对某个对象的操作，此法被称作封装，而那个类被称作包装类或封装类。很明显，包装类映射的是“对某种资源的操作”，是一抽象概念，即包装类的对象都是无状态对象（指逻辑上应该是无状态对象，但如果多个操作间有联系，则还是可能有状态的，但此时它的语义也相应地有些变化。如多一个CFile::Flush成员函数，用于刷新缓冲区内容，则此时就至少有一个状态——缓冲区，还可有一个状态记录是否已经调用过CFile::Write，没有则不用刷新）。
+现在应能了解封装的含义了。将对某种资源的操作封装成一个类，此包装类映射的不是世界中定义的某一“名词性概念”，而是世界的“动词性概念”或算法中“对某一概念的操作”这个人为定出来的抽象概念。由于包装类是对某种资源的操作的封装，则包装类对象一定有个属性指明被操作的对象，对于MFC中的CFile，就是CFile::m_hFile成员变量（类型为HANDLE），其在包装类对象的主要运作过程（前面的CFile::Read和CFile::Write）中被读。
+有什么好处？封装提供了一种手段以将世界中的部分“动词性概念”转换成对象，使得程序的架构更加简单（多条“动词性概念”变成一个“名词性概念”，减少了“动词性概念”的数量），更趋于面向对象的编程思想。
+但应区别开包装类对象和被包装的对象。包装类对象只是个外壳，而被包装的对象一定是个具有状态的对象，因为操作就是改变资源的状态。对于CFile，CFile的实例是包装类对象，其保持着一个对被包装对象——文件内核对象（Windows操作系统中定义的一种资源，用HANDLE的实例表征）——的引用，放在CFile::m_hFile中。因此，包装类对象是独立于被包装对象的。即CFile a;，此时a.m_hFile的值为0或-1，表示其引用的对象是无效的，因此如果a.Read( … );将失败，因为操作施加的资源是无效的。对此，就应先调用a.Open( … );以将a和一特定的文件内核对象绑定起来，而调用a.Close( … );将解除绑定。注意CFile::Close调用后只是解除了绑定，并不代表a已经被销毁了，因为a映射的并不是文件内核对象，而是对文件内核对象操作的包装类对象。
+如果仔细想想，就会发现，老虎能够吃兔子，兔子能够被吃，那这里应该是老虎有个功能是“吃兔子”还是多个兔子的包装类来封装“吃兔子”的操作？这其实不存在任何问题，“老虎吃兔子”和“兔子被吃”完全是两个不同的操作，前者涉及两种资源，后者只涉及一种资源，因此可以同时实现两者，具体应视各自在相应世界中的语义。如果对于真实世界，则可以简略地说老虎有个“吃”的功能，可以吃“肉”，而动物从“肉”和“自主能动性”多重继承，兔子再从动物继承。这里有个类叫“自主能动性”，指动物具有意识，能够自己动作，这在C++中的表现就是有成员函数的类，表示有功能可以被操作，但收音机也具有调台等功能，难道说收音机也能自己动？！这就是世界的意义——运转。</code></pre><p>————————————————</p>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>封装</tag>
+        <tag>对象</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面向对象和面向过程</title>
+    <url>/2019/10/22/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<p>转载：</p>
+<h3 id="面向过程编程："><a href="#面向过程编程：" class="headerlink" title="面向过程编程："></a>面向过程编程：</h3><p><strong>关注的是问题的解决的过程步骤（事情是如何解决的），算法</strong></p>
+<h3 id="面向对象编程："><a href="#面向对象编程：" class="headerlink" title="面向对象编程："></a>面向对象编程：</h3><p><strong>关注的是解决问题的人（类），具备什么样的数据（成员变量），具备什么样的技能（成员函数）才能解决问题</strong></p>
+<a id="more"></a>
+<p>** 抽象：<strong>找出一个能解决问题的”对象”（观察研究对象），找出解决问题所必须的数据（属性），功能（成员函数）<br>**封装：</strong>把抽象的结构，归结为一个类（数据类型），然后实例化出类对象，设置对象的属性，调用对象的功能达到解决问题的目的<br><strong>继承：</strong>在解决问题前先寻找之前的类能不能解决问题，或解决部分问题，如果可以，则把旧的类型继承后再次扩展，来缩短解决问题的时间，降低解决问题的难度。<br><strong>多态：</strong>对象的多种形态，外部看到一个对象（父亲），当我们向对象发出指令，对象会根据自身情况做出独特反应</p>
+<h3 id="一、类和对象"><a href="#一、类和对象" class="headerlink" title="一、类和对象"></a>一、类和对象</h3><ol>
+<li>通过分析“对象”的属性和行为设计出一个类</li>
+<li>类就是数据类型<br>简单类型：只能表示一个属性（变量），C/C++内建数据类型<br>数组类型：可以表示多个属性（变量），类型必须相同<br>结构类型：可以表示多个属性（变量），但缺少行为（函数）<br>类类型：既能表示属性（变量），也能表示行为，一种复合的数据类型</li>
+<li>对象就是类这种数据类型创建出来的实例，相当于结构变量<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>&#123;</span></span><br><span class="line"><span class="comment">//成员变量</span></span><br><span class="line"><span class="comment">//成员函数</span></span><br><span class="line">&#125;；</span><br><span class="line">Student stu;<span class="comment">//(类对象)</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="二、类的定义于初始化"><a href="#二、类的定义于初始化" class="headerlink" title="二、类的定义于初始化"></a>二、类的定义于初始化</h3><ol>
+<li><p>类的一般形式</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名：继承方式 父类&#123;</span></span><br><span class="line"><span class="keyword">public</span>/<span class="keyword">private</span>/<span class="keyword">protected</span>:<span class="comment">//访问控制限制符</span></span><br><span class="line">成员变量</span><br><span class="line"><span class="comment">//构造函数</span></span><br><span class="line">类名(形参表)&#123;&#125;</span><br><span class="line"><span class="comment">//析构函数</span></span><br><span class="line">~类名(<span class="keyword">void</span>)&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>类的访问控制限定符</p>
+</li>
+</ol>
+<p><strong>public</strong>：公有成员，在任何位置都能访问<br><strong>private</strong>：私有成员，只能被自己类的成员函数访问<br><strong>protracted</strong>：受保护成员，只能在自己类和子类中访问<br>注意：类中的成员变量、成员函数默认是private(私有的)，结构体中的成员变量、成员函数默认是public(公有的)；<strong>C++中类和结构的区别只有成员函数和成员变量默认访问权限不同</strong></p>
+<ol start="3">
+<li>构造函数</li>
+</ol>
+<ul>
+<li>什么是构造函数？<strong>类的同名函数就是构造函数，没有返回值</strong></li>
+<li>什么时候被调用？被谁调用？调用几次？<strong>创建类对象时会被自动调用（每创建一个对象就被调用一次），整个生命周期中一定会被调用一次，只能调用一次</strong></li>
+<li>负责干什么，有什么用？成员变量的初始化，分配相关资源，设置对象的初始化状态</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名：继承方式 父类&#123;</span></span><br><span class="line"><span class="comment">//构造函数</span></span><br><span class="line">类名(形参表)&#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>对象创建过程</li>
+</ol>
+<ul>
+<li>分配类型所需要的空间，无论是栈还是堆</li>
+<li>传递实参调用构造函数，完成如下任务<br>1、根据继承表依次调用父类的构造函数<br>2、根据成员变量的顺序依次调用成员变量的构造函数<br>3、执行构造函数中的代码</li>
+<li><em>注意：执行构造函数的代码是整个构造函数的最后一步，要保证构造函数代码所需的一切资源和先决条件在该代码执行前已经准备充分，并得到正确的初始化。*</em></li>
+</ul>
+<ol start="5">
+<li>对象的创建方法</li>
+</ol>
+<ul>
+<li><p><strong>在栈上创建：</strong><br><font color="#ff0000">类名+对象;</font>//若为空则不需要（）<br>或 <font color="#ff0000">类名+对象（实参）;</font></p>
+</li>
+<li><p><strong>在堆上创建：</strong><br><font color="#ff0000">类名*对象指针 = new 类名；</font><br>或 <font color="#ff0000">类名*对象指针 = new 类名（实参）；</font></p>
+</li>
+<li><p><strong>创建多个对象：</strong></p>
+<p><font color="#ff0000">类名 对象={(实参),(实参),(实参)}</font></p>
+<p><font color="#ff0000">类名*对象指针=new 类名[n]{(实参),(实参),(实参)}</font></p>
+</li>
+</ul>
+<p><strong>注意：通过malloc创建的类对象不能调用构造函数，通过new创建的对象，一定要通过delete释放</strong></p>
+]]></content>
+      <categories>
+        <category>编程思想</category>
+      </categories>
+      <tags>
+        <tag>面向对象</tag>
+        <tag>面向过程</tag>
+        <tag>编程思想</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Visual-Studio常用快捷键</title>
     <url>/2019/10/22/Visual-Studio%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
     <content><![CDATA[<ol>
 <li>项目相关的快捷键<br>Ctrl + Shift + B = 生成项目<br>Ctrl + Alt + L = 显示Solution Explorer（解决方案资源管理器）<br>Shift + Alt+ C = 添加新类<br>Shift + Alt + A = 添加新项目到项目</li>
+</ol>
+<a id="more"></a>
+<ol start="2">
 <li>编辑相关的键盘快捷键<br>Ctrl + Enter = 在当前行插入空行<br>Ctrl + Shift + Enter = 在当前行下方插入空行<br>Ctrl +空格键 = 使用IntelliSense（智能感知）自动完成<br>Alt + Shift +箭头键(←,↑,↓,→) = 选择代码的自定义部分<br>Ctrl + } = 匹配大括号、括号<br>Ctrl + Shift +} = 在匹配的括号、括号内选择文本<br>Ctrl + Shift + S = 保存所有文件和项目<br>Ctrl + K，Ctrl + C = 注释选定行<br>Ctrl + K，Ctrl + U = 取消选定行的注释<br>Ctrl + K，Ctrl + D = 正确对齐所有代码<br>Shift + End = 从头到尾选择整行<br>Shift + Home = 从尾到头选择整行<br>Ctrl + Delete = 删除光标右侧的所有字</li>
 <li>导航相关的键盘快捷键<br>Ctrl +Up/Down = 滚动窗口但不移动光标<br>Ctrl + - = 让光标移动到它先前的位置<br>Ctrl ++ = 让光标移动到下一个位置<br>F12 = 转到定义</li>
 <li>调试相关的键盘快捷键<br>Ctrl + Alt + P = 附加到进程<br>F10 = 调试单步执行<br>F5 = 开始调试<br>Shift + F5 = 停止调试<br>Ctrl + Alt + Q = 添加快捷匹配<br>F9 = 设置或删除断点</li>
@@ -341,8 +464,8 @@
         <category>C语言</category>
       </categories>
       <tags>
-        <tag>C</tag>
         <tag>C语言</tag>
+        <tag>C</tag>
       </tags>
   </entry>
   <entry>
