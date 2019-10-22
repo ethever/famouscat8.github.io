@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>1</title>
-    <url>/2019/10/20/1/</url>
-    <content><![CDATA[]]></content>
+    <title>Visual-Studio常用快捷键</title>
+    <url>/2019/10/22/Visual-Studio%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <content><![CDATA[<ol>
+<li>项目相关的快捷键<br>Ctrl + Shift + B = 生成项目<br>Ctrl + Alt + L = 显示Solution Explorer（解决方案资源管理器）<br>Shift + Alt+ C = 添加新类<br>Shift + Alt + A = 添加新项目到项目</li>
+<li>编辑相关的键盘快捷键<br>Ctrl + Enter = 在当前行插入空行<br>Ctrl + Shift + Enter = 在当前行下方插入空行<br>Ctrl +空格键 = 使用IntelliSense（智能感知）自动完成<br>Alt + Shift +箭头键(←,↑,↓,→) = 选择代码的自定义部分<br>Ctrl + } = 匹配大括号、括号<br>Ctrl + Shift +} = 在匹配的括号、括号内选择文本<br>Ctrl + Shift + S = 保存所有文件和项目<br>Ctrl + K，Ctrl + C = 注释选定行<br>Ctrl + K，Ctrl + U = 取消选定行的注释<br>Ctrl + K，Ctrl + D = 正确对齐所有代码<br>Shift + End = 从头到尾选择整行<br>Shift + Home = 从尾到头选择整行<br>Ctrl + Delete = 删除光标右侧的所有字</li>
+<li>导航相关的键盘快捷键<br>Ctrl +Up/Down = 滚动窗口但不移动光标<br>Ctrl + - = 让光标移动到它先前的位置<br>Ctrl ++ = 让光标移动到下一个位置<br>F12 = 转到定义</li>
+<li>调试相关的键盘快捷键<br>Ctrl + Alt + P = 附加到进程<br>F10 = 调试单步执行<br>F5 = 开始调试<br>Shift + F5 = 停止调试<br>Ctrl + Alt + Q = 添加快捷匹配<br>F9 = 设置或删除断点</li>
+<li>搜索相关的键盘快捷键<br>Ctrl + K Ctrl + K = 将当前行添加书签<br>Ctrl + K Ctrl + N = 导航至下一个书签<br>Ctrl + . = 如果你键入一个类名如Collection，且命名空间导入不正确的话，那么这个快捷方式组合将自动插入导入<br>Ctrl + Shift + F = 在文件中查找<br>Shift + F12 = 查找所有引用<br>Ctrl + F = 显示查找对话框<br>Ctrl + H = 显示替换对话框<br>Ctrl + G = 跳转到行号或行<br>Ctrl + Shift + F = 查找所选条目在整个解决方案中的引用</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Visual Studio</category>
+      </categories>
+      <tags>
+        <tag>Visual Studio</tag>
+        <tag>快捷键</tag>
+      </tags>
   </entry>
   <entry>
     <title>常用寄存器</title>
@@ -222,6 +236,8 @@
 <li><p>总结：当<kbd>const</kbd>位于*<font color="#ff0000">之后</font>，说明这是一个常量的指针；当<kbd>const</kbd>位于*<font color="#ff0000">之前</font>，说明这是一个常量。</p>
 </li>
 </ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> p; <span class="comment">//这是一个普通的整型变量  </span></span><br><span class="line"><span class="keyword">int</span> *p; <span class="comment">//首先从P 处开始,先与*结合,所以说明P 是一个指针,然后再与int 结合,说明指针所指向的内容的类型为int 型.所以P是一个返回整型数据的指针  </span></span><br><span class="line"><span class="keyword">int</span> p[<span class="number">3</span>]; <span class="comment">//首先从P 处开始,先与[]结合,说明P 是一个数组,然后与int 结合,说明数组里的元素是整型的,所以P 是一个由整型数据组成的数组  </span></span><br><span class="line"><span class="keyword">int</span> *p[<span class="number">3</span>]; <span class="comment">//首先从P 处开始,先与[]结合,因为其优先级比*高,所以P 是一个数组,然后再与*结合,说明数组里的元素是指针类型,然后再与int 结合,说明指针所指向的内容的类型是整型的,所以P 是一个由返回整型数据的指针所组成的数组  </span></span><br><span class="line"><span class="keyword">int</span> (*p)[<span class="number">3</span>]; <span class="comment">//首先从P 处开始,先与*结合,说明P 是一个指针然后再与[]结合(与"()"这步可以忽略,只是为了改变优先级),说明指针所指向的内容是一个数组,然后再与int 结合,说明数组里的元素是整型的.所以P 是一个指向由整型数据组成的数组的指针  </span></span><br><span class="line"><span class="keyword">int</span> **p; <span class="comment">//首先从P 开始,先与*结合,说是P 是一个指针,然后再与*结合,说明指针所指向的元素是指针,然后再与int 结合,说明该指针所指向的元素是整型数据.由于二级指针以及更高级的指针极少用在复杂的类型中,所以后面更复杂的类型我们就不考虑多级指针了,最多只考虑一级指针.  </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">p</span><span class="params">(<span class="keyword">int</span>)</span></span>; <span class="comment">//从P 处起,先与()结合,说明P 是一个函数,然后进入()里分析,说明该函数有一个整型变量的参数,然后再与外面的int 结合,说明函数的返回值是一个整型数据  </span></span><br><span class="line">Int (*p)(<span class="keyword">int</span>); <span class="comment">//从P 处开始,先与指针结合,说明P 是一个指针,然后与()结合,说明指针指向的是一个函数,然后再与()里的int 结合,说明函数有一个int 型的参数,再与最外层的int 结合,说明函数的返回类型是整型,所以P 是一个指向有一个整型参数且返回类型为整型的函数的指针  </span></span><br><span class="line"><span class="keyword">int</span> *(*p(<span class="keyword">int</span>))[<span class="number">3</span>]; <span class="comment">//可以先跳过,不看这个类型,过于复杂从P 开始,先与()结合,说明P 是一个函数,然后进入()里面,与int 结合,说明函数有一个整型变量参数,然后再与外面的*结合,说明函数返回的是一个指针,,然后到最外面一层,先与[]结合,说明返回的指针指向的是一个数组,然后再与*结合,说明数组里的元素是指针,然后再与int 结合,说明指针指向的内容是整型数据.所以P 是一个参数为一个整数据且返回一个指向由整型指针变量组成的数组的指针变量的函数.</span></span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>C语言</category>
@@ -325,8 +341,8 @@
         <category>C语言</category>
       </categories>
       <tags>
-        <tag>C语言</tag>
         <tag>C</tag>
+        <tag>C语言</tag>
       </tags>
   </entry>
   <entry>
@@ -666,8 +682,8 @@
 <p>用二进制从0写到1111<br>0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111<br>这种二进制使用起来太麻烦，改成更简单一点的符号：<br>0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F<br>这就是十六进制了，中国古代的时候就已经使用十六进制。</p>
 ]]></content>
       <tags>
-        <tag>汇编</tag>
         <tag>进制</tag>
+        <tag>汇编</tag>
       </tags>
   </entry>
 </search>
