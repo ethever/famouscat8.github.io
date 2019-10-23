@@ -56,19 +56,19 @@
   };
 </script>
 
-  <meta name="description" content="版权声明：本文为CSDN博主「zdleek」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。原文链接：https://blog.csdn.net/baodi_z/article/details/210432   一个有趣的现象，摘自CSDN 吹云Blog《C++从零开始（十二）——何谓面向对象编程思想》原文http://blog.csdn.net/chuiyu">
-<meta name="keywords" content="C++,封装,对象">
+  <meta name="description" content="C++函数回调">
+<meta name="keywords" content="C++,函数回调">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[转载]关于封装--一个有趣的C++例子">
-<meta property="og:url" content="http://yoursite.com/2019/10/23/转载-关于封装-一个有趣的C-例子/index.html">
+<meta property="og:title" content="C++函数回调">
+<meta property="og:url" content="http://yoursite.com/2019/10/23/C-函数回调/index.html">
 <meta property="og:site_name" content="FamousCat">
-<meta property="og:description" content="版权声明：本文为CSDN博主「zdleek」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。原文链接：https://blog.csdn.net/baodi_z/article/details/210432   一个有趣的现象，摘自CSDN 吹云Blog《C++从零开始（十二）——何谓面向对象编程思想》原文http://blog.csdn.net/chuiyu">
+<meta property="og:description" content="C++函数回调">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-22T16:14:00.116Z">
+<meta property="og:updated_time" content="2019-10-23T11:22:56.048Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[转载]关于封装--一个有趣的C++例子">
-<meta name="twitter:description" content="版权声明：本文为CSDN博主「zdleek」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。原文链接：https://blog.csdn.net/baodi_z/article/details/210432   一个有趣的现象，摘自CSDN 吹云Blog《C++从零开始（十二）——何谓面向对象编程思想》原文http://blog.csdn.net/chuiyu">
-  <link rel="canonical" href="http://yoursite.com/2019/10/23/转载-关于封装-一个有趣的C-例子/">
+<meta name="twitter:title" content="C++函数回调">
+<meta name="twitter:description" content="C++函数回调">
+  <link rel="canonical" href="http://yoursite.com/2019/10/23/C-函数回调/">
 
 
 <script id="page-configurations">
@@ -82,7 +82,7 @@
   };
 </script>
 
-  <title>[转载]关于封装--一个有趣的C++例子 | FamousCat</title>
+  <title>C++函数回调 | FamousCat</title>
   
 
 
@@ -311,7 +311,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/23/转载-关于封装-一个有趣的C-例子/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/23/C-函数回调/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="FamousCat">
@@ -325,7 +325,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            [转载]关于封装--一个有趣的C++例子
+            C++函数回调
             
 
           
@@ -342,7 +342,7 @@
                 
               
 
-              <time title="创建时间：2019-10-23 00:11:54 / 修改时间：00:14:00" itemprop="dateCreated datePublished" datetime="2019-10-23T00:11:54+08:00">2019-10-23</time>
+              <time title="创建时间：2019-10-23 19:20:42 / 修改时间：19:22:56" itemprop="dateCreated datePublished" datetime="2019-10-23T19:20:42+08:00">2019-10-23</time>
             </span>
           
             
@@ -378,47 +378,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>版权声明：本文为CSDN博主「zdleek」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/baodi_z/article/details/210432" target="_blank" rel="noopener">https://blog.csdn.net/baodi_z/article/details/210432</a></p>
-<p>  一个有趣的现象，摘自CSDN 吹云Blog《C++从零开始（十二）——何谓面向对象编程思想》原文<a href="http://blog.csdn.net/chuiyun/archive/2004/11/26/194722.aspx。" target="_blank" rel="noopener">http://blog.csdn.net/chuiyun/archive/2004/11/26/194722.aspx。</a></p>
+        <p>C++函数回调</p>
 <a id="more"></a>
-<pre><code>之所以摘录这段文章，是因为我奇怪下面的例子竟然真的能够编译通过--在引用的文件中篡改类的private为public就可以直接访问私有变量，而且能够正常访问和赋值。
-下面是摘录的原文，有兴趣的朋友不妨也试试编个代码试验一下。</code></pre><hr>
-<p>封装</p>
-<pre><code>先来看现在在各类VC教程中关于对象的讲解中经常能看见的如下的一个类的设计。
-class Person
-{ private: char m_Name[20]; unsigned long m_Age; bool m_Sex;
-  public:  const char* GetName() const;  void SetName( const char* );
-           unsigned long GetAge() const; void SetAge( unsigned long );
-           bool GetSex() const;          void SetSex( bool );
-};
-上面将成员变量全部定义为private，然后又提供三对Get/Set函数来存取上面的三个成员变量（因为它们是private，外界不能直接存取），这三对函数都是public的，为什么要这样？那些教材将此称作封装，是对类Person的内部内存布局的封装，这样外界就不知道其在内存上是如何布局的并进而可以保证内存的有效性（只由类自身操作其实例）。
-首先要确认上面设计的荒谬性，它是正宗的“有门没锁”毫无意义。接着再看所谓的对内存布局的封装。回想在《C++从零开始（十）》中说的为什么每个要使用类的源文件的开头要包含相应的头文件。假设上面是在Person.h中的声明，然后在b.cpp中要使用类Person，本来要#include &quot;Person.h&quot;，现在替换成下面：
-class Person
-{ public: char m_Name[20]; unsigned long m_Age; bool m_Sex;
-  public: const char* GetName() const;  void SetName( const char* );
-          unsigned long GetAge() const; void SetAge( unsigned long );
-          bool GetSex() const;          void SetSex( bool );
-};
-然后在b.cpp中照常使用类Person，如下：
-Person a, b; a.m_Age = 20; b.GetSex();
-这里就直接使用了Person::m_Age了，就算不做这样蹩脚的动作，依旧#include &quot;Person.h&quot;，如下：
-struct PERSON { char m_Name[20]; unsigned long m_Age; bool m_Sex; };
-Person a, b; PERSON *pP = ( PERSON* )&amp;a; pP-&gt;m_Age = 40;
-上面依旧直接修改了Person的实例a的成员Person::m_Age，如何能隐藏内存布局？！请回想声明的作用，类的内存布局是编译器生成对象时必须的，根本不能对任何使用对象的代码隐藏有关对象实现的任何东西，否则编译器无法编译相应的代码。
-那么从语义上来看。Person映射的不是真实世界中的人的概念，应该是存放某个数据库中的某个记录人员信息的表中的记录的缓冲区，那么缓冲区应该具备那三对Get/Set所代表的功能吗？缓冲区是缓冲数据用的，缓冲后被其它操作使用，就好像箱子，只是放东西用。故上面的三对Get/Set没有存在的必要，而三个成员变量则不能是private。当然，如果Person映射的并不是缓冲区，而在其它的世界中具备像上面那样表现的语义，则像上面那样定义就没有问题，但如果是因为对内存布局的封装而那样定义类则是大错特错的。
-上面错误的根本在于没有理解何谓封装。为了说明封装，先看下MFC（Microsoft Foundation Class Library——微软功能类库，一个定义了许多类的库文件，其中的绝大部分类是封装设计。关于库文件在说明SDK时阐述）中的类CFile的定义。从名字就可看出它映射的是操作系统中文件的概念，但它却有这样的成员函数——CFile::Open、CFile::Close、CFile::Read、CFile::Write，有什么问题？这四个成员函数映射的都是对文件的操作而不是文件所具备的功能，分别为打开文件、关闭文件、从文件读数据、向文件写数据。这不是和前面说的成员函数的语义相背吗？上面四个操作有个共性，都是施加于文件这个资源上的操作，可以将它们叫做“被功能”，如文件具有“被打开”的功能，具有“被读取”的功能，但应注意它们实际并不是文件的功能。
-按照原来的说法，应该将文件映射为一个结构，如FILE，然后上面的四个操作应映射成四个函数，再利用名字空间的功能，如下：
-namespace OFILE
-{
-    bool Open( FILE&amp;, … );  bool Close( FILE&amp;, … );
-    bool Read( FILE&amp;, … );  bool Write( FILE&amp;, … );
-}
-上面的名字空间OFILE表示里面的四个函数都是对文件的操作，但四个函数都带有一个FILE&amp;的参数。回想非静态成员函数都有个隐藏的参数this，因此，一个了不起的想法诞生了。
-将所有对某种资源的操作的集合看成是一种资源，把它映射成一个类，则这个类的对象就是对某个对象的操作，此法被称作封装，而那个类被称作包装类或封装类。很明显，包装类映射的是“对某种资源的操作”，是一抽象概念，即包装类的对象都是无状态对象（指逻辑上应该是无状态对象，但如果多个操作间有联系，则还是可能有状态的，但此时它的语义也相应地有些变化。如多一个CFile::Flush成员函数，用于刷新缓冲区内容，则此时就至少有一个状态——缓冲区，还可有一个状态记录是否已经调用过CFile::Write，没有则不用刷新）。
-现在应能了解封装的含义了。将对某种资源的操作封装成一个类，此包装类映射的不是世界中定义的某一“名词性概念”，而是世界的“动词性概念”或算法中“对某一概念的操作”这个人为定出来的抽象概念。由于包装类是对某种资源的操作的封装，则包装类对象一定有个属性指明被操作的对象，对于MFC中的CFile，就是CFile::m_hFile成员变量（类型为HANDLE），其在包装类对象的主要运作过程（前面的CFile::Read和CFile::Write）中被读。
-有什么好处？封装提供了一种手段以将世界中的部分“动词性概念”转换成对象，使得程序的架构更加简单（多条“动词性概念”变成一个“名词性概念”，减少了“动词性概念”的数量），更趋于面向对象的编程思想。
-但应区别开包装类对象和被包装的对象。包装类对象只是个外壳，而被包装的对象一定是个具有状态的对象，因为操作就是改变资源的状态。对于CFile，CFile的实例是包装类对象，其保持着一个对被包装对象——文件内核对象（Windows操作系统中定义的一种资源，用HANDLE的实例表征）——的引用，放在CFile::m_hFile中。因此，包装类对象是独立于被包装对象的。即CFile a;，此时a.m_hFile的值为0或-1，表示其引用的对象是无效的，因此如果a.Read( … );将失败，因为操作施加的资源是无效的。对此，就应先调用a.Open( … );以将a和一特定的文件内核对象绑定起来，而调用a.Close( … );将解除绑定。注意CFile::Close调用后只是解除了绑定，并不代表a已经被销毁了，因为a映射的并不是文件内核对象，而是对文件内核对象操作的包装类对象。
-如果仔细想想，就会发现，老虎能够吃兔子，兔子能够被吃，那这里应该是老虎有个功能是“吃兔子”还是多个兔子的包装类来封装“吃兔子”的操作？这其实不存在任何问题，“老虎吃兔子”和“兔子被吃”完全是两个不同的操作，前者涉及两种资源，后者只涉及一种资源，因此可以同时实现两者，具体应视各自在相应世界中的语义。如果对于真实世界，则可以简略地说老虎有个“吃”的功能，可以吃“肉”，而动物从“肉”和“自主能动性”多重继承，兔子再从动物继承。这里有个类叫“自主能动性”，指动物具有意识，能够自己动作，这在C++中的表现就是有成员函数的类，表示有功能可以被操作，但收音机也具有调台等功能，难道说收音机也能自己动？！这就是世界的意义——运转。</code></pre><p>————————————————</p>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"><span class="comment">// 回调函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">populate_array</span><span class="params">(<span class="keyword">int</span> *<span class="built_in">array</span>, <span class="keyword">size_t</span> arraySize, <span class="keyword">int</span> (*getNextValue)(<span class="keyword">void</span>))</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">size_t</span> i=<span class="number">0</span>; i&lt;arraySize; i++)</span><br><span class="line">        <span class="built_in">array</span>[i] = getNextValue();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 获取随机值</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getNextRandomValue</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> rand();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> myarray[<span class="number">10</span>];</span><br><span class="line">    populate_array(myarray, <span class="number">10</span>, getNextRandomValue);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, myarray[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -446,9 +410,7 @@ namespace OFILE
             
               <a href="/tags/C/" rel="tag"># C++</a>
             
-              <a href="/tags/封装/" rel="tag"># 封装</a>
-            
-              <a href="/tags/对象/" rel="tag"># 对象</a>
+              <a href="/tags/函数回调/" rel="tag"># 函数回调</a>
             
           </div>
         
@@ -458,8 +420,8 @@ namespace OFILE
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/10/22/面向对象和面向过程/" rel="next" title="面向对象和面向过程">
-                  <i class="fa fa-chevron-left"></i> 面向对象和面向过程
+                <a href="/2019/10/23/转载-关于封装-一个有趣的C-例子/" rel="next" title="[转载]关于封装--一个有趣的C++例子">
+                  <i class="fa fa-chevron-left"></i> [转载]关于封装--一个有趣的C++例子
                 </a>
               
             </div>
@@ -467,10 +429,6 @@ namespace OFILE
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/10/23/C-函数回调/" rel="prev" title="C++函数回调">
-                  C++函数回调 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
