@@ -110,17 +110,16 @@ namespace OFILE
 </ul>
 <p><strong>注意：通过malloc创建的类对象不能调用构造函数，通过new创建的对象，一定要通过delete释放</strong></p>
 <ol start="6">
-<li>类的声明、实现、调用<ul>
-<li>在头文件中声明</li>
-<li>源文件实现类的相关函数<blockquote>
-<blockquote>
-<p>调用时只需要导入头文件，然后与类函数所在的源文件一起编译即可</p>
-</blockquote>
-</blockquote>
+<li><p>类的声明、实现、调用</p>
+<ul>
+<li><p>在头文件中声明</p>
+</li>
+<li><p>源文件实现类的相关函数</p>
 </li>
 </ul>
 </li>
 </ol>
+<p>调用时只需要导入头文件，然后与类函数所在的源文件一起编译即可</p>
 <p><strong>注意：如果一个类的内容不多，可以考虑在头文件中完全实现，也可以只在头文件实现一些简单的成员函数；类中自动生成的函数，在头文件中实现时，也需要在头文件中声明</strong></p>
 <h3 id="三、构造函数与初始化列表"><a href="#三、构造函数与初始化列表" class="headerlink" title="三、构造函数与初始化列表"></a>三、构造函数与初始化列表</h3><ol>
 <li>构造函数可以被重载（同一个名字的函数有多个版本）</li>
@@ -491,8 +490,8 @@ namespace OFILE
         <category>C语言</category>
       </categories>
       <tags>
-        <tag>C</tag>
         <tag>C语言</tag>
+        <tag>C</tag>
       </tags>
   </entry>
   <entry>
