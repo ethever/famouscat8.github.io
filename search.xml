@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>笔记</title>
+    <url>/2019/10/24/%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>51单片机笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>51单片机</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++函数回调</title>
     <url>/2019/10/23/C-%E5%87%BD%E6%95%B0%E5%9B%9E%E8%B0%83/</url>
     <content><![CDATA[<p>C++函数回调</p>
@@ -194,8 +206,8 @@ namespace OFILE
       </categories>
       <tags>
         <tag>汇编</tag>
-        <tag>汇编指令</tag>
         <tag>寄存器</tag>
+        <tag>汇编指令</tag>
       </tags>
   </entry>
   <entry>
@@ -507,8 +519,8 @@ namespace OFILE
         <category>C语言</category>
       </categories>
       <tags>
-        <tag>C语言</tag>
         <tag>C</tag>
+        <tag>C语言</tag>
       </tags>
   </entry>
   <entry>
