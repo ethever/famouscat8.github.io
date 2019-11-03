@@ -309,6 +309,121 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/19/汇编常用指令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FamousCat">
+      <meta itemprop="description" content="我想带一人回云深不知处，带回去，藏起来">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FamousCat">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            
+            <a href="/2019/10/19/汇编常用指令/" class="post-title-link" itemprop="url">汇编常用指令</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-19 23:55:18" itemprop="dateCreated datePublished" datetime="2019-10-19T23:55:18+08:00">2019-10-19</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-20 10:42:34" itemprop="dateModified" datetime="2019-10-20T10:42:34+08:00">2019-10-20</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/汇编学习/" itemprop="url" rel="index">
+                    <span itemprop="name">汇编学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>没有代码量的人很难懂代码的复用，实质上，所有面向对象的语言，它的出发点只有一个，它的本质只有一个，减少代码的重复，增加代码的复用。</p>
+<p>堆栈：特殊地内存区</p>
+<p>加法减法没有本质区别</p>
+<p>不存在进位</p>
+<p>明确数据宽度</p>
+<h3 id="MOV"><a href="#MOV" class="headerlink" title="MOV:"></a>MOV:</h3><p>MOV EAP,ESP<br>MOV EAP,DWORD PTR DS:[0X00ff00ff]</p>
+<h3 id="SUB"><a href="#SUB" class="headerlink" title="SUB:"></a>SUB:</h3><h3 id="PUSH"><a href="#PUSH" class="headerlink" title="PUSH:"></a>PUSH:</h3><p><strong>作用</strong>：将数据压入堆栈，并且将栈顶指针向上移动相应的位数。<br>比如<kbd>PUSH AX</kbd>，AX是<font color="#ff0000">16</font>位的，每个内存单元是一字节，即<font color="#ff0000">8</font>位，所以将十六位的AX存入堆栈时，会占用堆栈<font color="#ff0000">16位（即2字节）</font>的空间，所以栈顶指针要向上移动<font color="#ff0000">2</font>位，即ESP减少<font color="#ff0000">4</font>；再比如<kbd>PUSH EAX</kbd>，表示将<font color="#ff0000">32</font>位的EAX中的数据压入堆栈中，这些数据去将占用<font color="#ff0000">32/8=4</font>个内存单元，所以栈顶指针要向上移动<font color="#ff0000">4</font>位。</p>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/2019/10/19/汇编常用指令/" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+<div>
+  
+</div>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/18/C语言指针/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1282,7 +1397,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1295,7 +1410,7 @@
             <a href="/categories/">
           
         
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -1308,7 +1423,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -1393,7 +1508,7 @@ setInterval("createtime()",250);
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">10.8k</span> 字
+      博客全站共： <span class="post-count">11.2k</span> 字
     </span>
 </div>
 
