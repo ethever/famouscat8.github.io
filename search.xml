@@ -95,8 +95,8 @@
         <category>CentOS</category>
       </categories>
       <tags>
-        <tag>Cent OS</tag>
         <tag>操作系统</tag>
+        <tag>Cent OS</tag>
         <tag>Linux</tag>
       </tags>
   </entry>
@@ -681,8 +681,8 @@ namespace OFILE
         <category>C语言</category>
       </categories>
       <tags>
-        <tag>C语言</tag>
         <tag>C</tag>
+        <tag>C语言</tag>
       </tags>
   </entry>
   <entry>
@@ -1022,8 +1022,8 @@ namespace OFILE
 <p>用二进制从0写到1111<br>0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111<br>这种二进制使用起来太麻烦，改成更简单一点的符号：<br>0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F<br>这就是十六进制了，中国古代的时候就已经使用十六进制。</p>
 ]]></content>
       <tags>
-        <tag>汇编</tag>
         <tag>进制</tag>
+        <tag>汇编</tag>
       </tags>
   </entry>
 </search>
