@@ -3,9 +3,7 @@
   <entry>
     <title>树莓派</title>
     <url>/2019/11/10/%E6%A0%91%E8%8E%93%E6%B4%BE/</url>
-    <content><![CDATA[<a id="more"></a>
-
-<p>树莓派终于在前天回到了，又折腾了两天才把系统装好</p>
+    <content><![CDATA[<p>树莓派终于在前天回到了，又折腾了两天才把系统装好</p>
 <p>现在记录以下官方系统如何安装中文字体</p>
 <ol>
 <li>安装中文字体包：</li>
@@ -20,6 +18,8 @@
 <p>然后输入<kbd>scim</kbd>激活中文输入法:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">scim</span><br></pre></td></tr></table></figure>
 
+<a id="more"></a>
+
 <ol start="3">
 <li>安装完后输入</li>
 </ol>
@@ -30,6 +30,40 @@
 <p>然后在出现的列表中下翻，选择<kbd>zh_cn.utf-8</kbd>,按空格键确认选择，回车键确认安装</p>
 <p>下一个页面也选择<kbd>zh_cn.utf-8</kbd></p>
 <p>这就ok了。原谅我全程没放一张图，因为最近作业真的太多了(<del>试图掩盖偷懒的事实</del>)，有机会一定补上~</p>
+<h3 id="树莓派换源"><a href="#树莓派换源" class="headerlink" title="树莓派换源"></a>树莓派换源</h3><ol>
+<li>ssh登录到树莓派</li>
+<li>备份原文件</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo cp /etc/apt/sources.list.d/raspi.list /etc/apt/sources.list.d/raspi.list.bak</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>修改更新源</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<p>将第一行换成中科大的地址<strong>注意：<kbd>Ctrl+O</kbd>保存，然后回车，<kbd>Ctrl+X</kbd>退出。</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ stretch main contrib non-free rpi</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>修改系统更新源</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo nano /etc/apt/sources.list.d/raspi.list</span><br></pre></td></tr></table></figure>
+
+<p>将第一行修改成中科大的系统源地址</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deb http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ stretch main ui</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>同步更新源</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>更新和安装软件包</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>树莓派</category>
@@ -53,14 +87,9 @@
 </ol>
 <a id="more"></a>
 
-
-
-
-
-
-
-
-
+<ol start="9">
+<li>When leaving the hotel,a guest was encouraged to turn in the key,either by handing it to an attendant or by dropping it through a slot into a box.</li>
+</ol>
 ]]></content>
       <categories>
         <category>English-notes</category>
@@ -142,8 +171,8 @@
         <category>CentOS</category>
       </categories>
       <tags>
-        <tag>Cent OS</tag>
         <tag>操作系统</tag>
+        <tag>Cent OS</tag>
         <tag>Linux</tag>
       </tags>
   </entry>
@@ -728,8 +757,8 @@ namespace OFILE
         <category>C语言</category>
       </categories>
       <tags>
-        <tag>C</tag>
         <tag>C语言</tag>
+        <tag>C</tag>
       </tags>
   </entry>
   <entry>
