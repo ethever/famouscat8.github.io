@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>树莓派</title>
+    <url>/2019/11/10/%E6%A0%91%E8%8E%93%E6%B4%BE/</url>
+    <content><![CDATA[<a id="more"></a>
+
+<p>树莓派终于在前天回到了，又折腾了两天才把系统装好</p>
+<p>现在记录以下官方系统如何安装中文字体</p>
+<ol>
+<li>安装中文字体包：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install ttf-wqy-zenhei</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>安装中文输入法：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install scim-pinyin</span><br></pre></td></tr></table></figure>
+
+<p>然后输入<kbd>scim</kbd>激活中文输入法:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">scim</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>安装完后输入</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo raspi-config</span><br></pre></td></tr></table></figure>
+
+<p>选择<kbd>Localisation Options</kbd></p>
+<p>回车，选择<kbd>changs locals</kbd></p>
+<p>然后在出现的列表中下翻，选择<kbd>zh_cn.utf-8</kbd>,按空格键确认选择，回车键确认安装</p>
+<p>下一个页面也选择<kbd>zh_cn.utf-8</kbd></p>
+<p>这就ok了。原谅我全程没放一张图，因为最近作业真的太多了(<del>试图掩盖偷懒的事实</del>)，有机会一定补上~</p>
+]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+      <tags>
+        <tag>树莓派</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>English-notes1</title>
     <url>/2019/11/05/English-notes1/</url>
     <content><![CDATA[<ol>
@@ -12,8 +50,17 @@
 <li>He found a small,abandoned piece of property with a house and shed.</li>
 <li>He grew in stature in my mind.In the end,I think he stood as tall,and as proud,as the greatest American industrialists.</li>
 <li>They had all reached their success by the same route and by the same values snd principles:vision,determination,self-control,optimism,self-respect and,above all,integrity.</li>
-<li></li>
 </ol>
+<a id="more"></a>
+
+
+
+
+
+
+
+
+
 ]]></content>
       <categories>
         <category>English-notes</category>
@@ -95,8 +142,8 @@
         <category>CentOS</category>
       </categories>
       <tags>
-        <tag>操作系统</tag>
         <tag>Cent OS</tag>
+        <tag>操作系统</tag>
         <tag>Linux</tag>
       </tags>
   </entry>
@@ -1022,8 +1069,8 @@ namespace OFILE
 <p>用二进制从0写到1111<br>0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111<br>这种二进制使用起来太麻烦，改成更简单一点的符号：<br>0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F<br>这就是十六进制了，中国古代的时候就已经使用十六进制。</p>
 ]]></content>
       <tags>
-        <tag>进制</tag>
         <tag>汇编</tag>
+        <tag>进制</tag>
       </tags>
   </entry>
 </search>
