@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C语言格式化输出</title>
+    <url>/2019/11/19/C%E8%AF%AD%E8%A8%80%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA/</url>
+    <content><![CDATA[<h4 id="d"><a href="#d" class="headerlink" title="%d"></a>%d</h4><p>按整型数据的实际宽度输出</p>
+<ol>
+<li>用来输出十进制整数</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> b=<span class="number">90</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>,b);</span><br><span class="line"><span class="comment">//输出结果为90</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><kbd>%md</kbd>:%d的另一个用法是在%与d之间添加一个数值，用于控制输出的数据的位数，比如<kbd>%5d</kbd>，如果要输出的数据小于5位，输出时会自动在左边补0</li>
+</ol>
+<p>用法示例:</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a =<span class="number">45</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%5d"</span>,a);</span><br><span class="line"><span class="comment">//输出结果为00045</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h4 id="g"><a href="#g" class="headerlink" title="%g"></a>%g</h4><ol>
+<li>用于输出实数，输出格式为f格式或e格式<strong>%g不输出无意义的0</strong>，自动选择较小的格式输出</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> d=<span class="number">0.943000</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%g"</span>,d);</span><br><span class="line"><span class="comment">//输出结果为0.943而不是0.9430000</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>作业原题目:输入多个学生的成绩，统计出最高分，最低分，平均分，及格人数，及格率以及超过平均分的人数.</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="comment">//分析学生成绩</span></span><br><span class="line"><span class="comment">//famouscat </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> *grades=<span class="literal">NULL</span>;<span class="comment">//指向学生成绩的指针</span></span><br><span class="line">	<span class="keyword">int</span> n=<span class="number">0</span>;<span class="comment">//学生总数</span></span><br><span class="line">	 </span><br><span class="line">	<span class="keyword">double</span> max=<span class="number">0</span>;<span class="comment">//最大的成绩</span></span><br><span class="line">	<span class="keyword">double</span> min=<span class="number">0</span>;<span class="comment">//最小的成绩</span></span><br><span class="line">	<span class="keyword">double</span> grade_po=<span class="number">0</span>;<span class="comment">//平均分</span></span><br><span class="line">	<span class="keyword">double</span> grade_sum=<span class="number">0</span>;<span class="comment">//总体成绩 </span></span><br><span class="line">	<span class="keyword">double</span> index_p=<span class="number">0.6</span>;<span class="comment">//及格指数</span></span><br><span class="line">	<span class="keyword">double</span> grade_max=<span class="number">100</span>;<span class="comment">//满分成绩</span></span><br><span class="line">	<span class="keyword">double</span> stuOfPo=<span class="number">0</span>;<span class="comment">//及格人数;</span></span><br><span class="line">	<span class="keyword">double</span> PoG=<span class="number">0.0</span>;<span class="comment">//及格率</span></span><br><span class="line">	<span class="keyword">double</span> DPo=<span class="number">0.0</span>;<span class="comment">//操过平均分的人数 </span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"请输入学生成绩：(以回车键录入，输入-1结束)\n---------------------------------------------------------------------------------------------------\n"</span>);</span><br><span class="line">	</span><br><span class="line">	grades=(<span class="keyword">double</span>*)<span class="built_in">calloc</span>(n+<span class="number">1</span>,<span class="keyword">sizeof</span>(<span class="keyword">double</span>));</span><br><span class="line">	<span class="keyword">for</span>(n=<span class="number">0</span>;n!=<span class="number">-1</span>;n++)&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"请输入第%d个学生成绩:"</span>,n+<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">if</span>(grades==<span class="literal">NULL</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">		grades=(<span class="keyword">double</span>*)<span class="built_in">realloc</span>(grades,(n+<span class="number">2</span>)*<span class="keyword">sizeof</span>(<span class="keyword">double</span>));</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%lf"</span>,&amp;grades[n]);</span><br><span class="line">		getchar();<span class="comment">//把输入流中的回车符读走</span></span><br><span class="line">		<span class="keyword">if</span>(grades[n]==<span class="number">-1</span>)<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">if</span>(n==<span class="number">0</span>)max=min=grades[<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">if</span>(grades[n]&gt;=max)max=grades[n];</span><br><span class="line">		<span class="keyword">if</span>(grades[n]&lt;=min)min=grades[n];</span><br><span class="line">		<span class="comment">//统计及格人数 </span></span><br><span class="line">		<span class="keyword">if</span>(grades[n]&gt;=grade_max*index_p)stuOfPo++; </span><br><span class="line">		<span class="comment">//计算总成绩 </span></span><br><span class="line">		grade_sum+=grades[n];</span><br><span class="line">		<span class="comment">//计算平均分 </span></span><br><span class="line">		grade_po=grade_sum/n;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	PoG=stuOfPo/n;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//shower</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n\n学生成绩："</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> m=<span class="number">0</span>;m&lt;n;m++)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">" %g "</span>,grades[m]);</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(grades[m]&gt;grade_po)DPo++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n学生数:%d\n最高分:%g\n最低分:%g\n平均分:%g\n及格人数:%g\n及格率:%g\n超过平均分的人数:%g"</span>,</span><br><span class="line">	n,max,min,grade_po,stuOfPo,PoG,DPo);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">free</span>(grades);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>C</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>格式化输出</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>树莓派</title>
     <url>/2019/11/10/%E6%A0%91%E8%8E%93%E6%B4%BE/</url>
     <content><![CDATA[<p>树莓派终于在前天回到了，又折腾了两天才把系统装好</p>
@@ -685,6 +721,9 @@ namespace OFILE
 <p>代码实现：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> index=<span class="number">32</span>;<span class="comment">//左移位数。 </span></span><br><span class="line">    <span class="keyword">int</span> flag=<span class="number">0</span>;<span class="comment">//判断第一位是否为零，如果是零则不输出。 </span></span><br><span class="line">    <span class="keyword">int</span> bit=<span class="number">0</span>;<span class="comment">//用于临时存储二进制位。</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">0</span>)&#123;</span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">"%d"</span>,<span class="number">0</span>);</span><br><span class="line">    	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">while</span>(index&gt;<span class="number">0</span>)&#123;</span><br><span class="line">    index--;</span><br><span class="line">    	bit=n&amp;(<span class="number">1</span>&lt;&lt;index)?<span class="number">1</span>:<span class="number">0</span>;</span><br><span class="line">    	<span class="keyword">if</span>(bit!=<span class="number">0</span>)</span><br><span class="line">    		flag=<span class="number">1</span>;</span><br><span class="line">    	<span class="keyword">if</span>(flag==<span class="number">1</span>)</span><br><span class="line">    		<span class="built_in">printf</span>(<span class="string">"%d"</span>,bit);</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="交换两个整型"><a href="#交换两个整型" class="headerlink" title="交换两个整型"></a>交换两个整型</h3><p>交换两个整型的方法有很多，比如创建临时变量，或者使用加减法，一个更有趣的方法是使用位运算中的<font color="#ff0000">xor</font>，异或运算来完成两个整型的交换<br>XOR:按位异或，当两个位不同时结果为1，否则为0</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a=<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">int</span> b=<span class="number">5</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//交换a,b</span></span><br><span class="line">	a=a^b;</span><br><span class="line">	b=a^b;</span><br><span class="line">	a=a^b;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"a=%d,b=%d"</span>,a,b);</span><br><span class="line">	<span class="comment">//a=5,b=2</span></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>位运算</category>
@@ -1111,8 +1150,8 @@ namespace OFILE
 <p>用二进制从0写到1111<br>0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111<br>这种二进制使用起来太麻烦，改成更简单一点的符号：<br>0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F<br>这就是十六进制了，中国古代的时候就已经使用十六进制。</p>
 ]]></content>
       <tags>
-        <tag>汇编</tag>
         <tag>进制</tag>
+        <tag>汇编</tag>
       </tags>
   </entry>
 </search>
