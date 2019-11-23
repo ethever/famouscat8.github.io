@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>redis安装</title>
+    <url>/2019/11/23/redis%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h3 id="Redis是什么"><a href="#Redis是什么" class="headerlink" title="Redis是什么"></a>Redis是什么</h3><p>Redis是一个key-value存储系统。和Memcached类似，它支持的value类型相对更多，包括<kbd>string</kbd>字符串、<kbd>list</kbd>链表、<kbd>set</kbd>集合、<kbd>zset</kbd>有序集合、<kbd>hash</kbd>哈希类型。这些数据类型都支持push/pop、add/remove还有取交集，并集，差集等丰富的操作，而且这些操作都是原子性的。redis还支持不同的排序方式。为了保证效率，数据都缓存在内存中。redis会周期性地把数据写入硬盘或者把修改操作写入追加的记录文件，并且在此基础上实现了主从同步</p>
+<a id="more"></a>
+
+<h3 id="Redis的用途"><a href="#Redis的用途" class="headerlink" title="Redis的用途"></a>Redis的用途</h3><ol>
+<li>redis可以做缓存</li>
+<li>redis可以做消息队列</li>
+</ol>
+<h3 id="Redis的本质"><a href="#Redis的本质" class="headerlink" title="Redis的本质"></a>Redis的本质</h3><ol>
+<li>将数据保存在内存中</li>
+</ol>
+<h3 id="Redis的特性"><a href="#Redis的特性" class="headerlink" title="Redis的特性"></a>Redis的特性</h3><ol>
+<li>数据可持久化</li>
+<li>支持多种格式数据</li>
+</ol>
+<h3 id="Redis的安装和使用"><a href="#Redis的安装和使用" class="headerlink" title="Redis的安装和使用"></a>Redis的安装和使用</h3><ol>
+<li>下载解压</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-3.0.6.tar.gz</span><br><span class="line">tar xzf redis-3.0.6.tar.gz</span><br><span class="line"><span class="built_in">cd</span> redis-3.0.6</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>启动服务端</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">src/redis-server</span><br></pre></td></tr></table></figure>
+
+<p><strong>必须先启动服务端再启动客户端</strong></p>
+<ol start="3">
+<li>启动客户端</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">src/redis-cli</span><br><span class="line">reids&gt;<span class="built_in">set</span> foo bar</span><br><span class="line">OK</span><br><span class="line">redis&gt;get foo</span><br><span class="line"><span class="string">"bar"</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的代码中，<kbd>src/redis-cli</kbd>表示启动客户端</p>
+<p><kbd>set foo bar</kbd>表示将bar这条数据存入一个列表中，这个列表的名字叫做foo</p>
+<p><kbd>get foo</kbd>表示从名字为foo这个列表取出数据</p>
+<p>……….本来是想安装mysql的，，，可。。可是。。。竟然提示缺少glibc2.18???</p>
+<p>服务器有glibc2.17居然升级不了glibc2.18????而且还没有错误信息？？</p>
+<p>好迷</p>
+]]></content>
+      <categories>
+        <category>redis</category>
+      </categories>
+      <tags>
+        <tag>redis安装</tag>
+        <tag>redis数据库</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C语言格式化输出</title>
     <url>/2019/11/19/C%E8%AF%AD%E8%A8%80%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA/</url>
     <content><![CDATA[<h4 id="d"><a href="#d" class="headerlink" title="%d"></a>%d</h4><p>按整型数据的实际宽度输出</p>
@@ -220,8 +269,8 @@
         <category>CentOS</category>
       </categories>
       <tags>
-        <tag>Cent OS</tag>
         <tag>操作系统</tag>
+        <tag>Cent OS</tag>
         <tag>Linux</tag>
       </tags>
   </entry>
@@ -1150,8 +1199,8 @@ namespace OFILE
 <p>用二进制从0写到1111<br>0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111<br>这种二进制使用起来太麻烦，改成更简单一点的符号：<br>0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F<br>这就是十六进制了，中国古代的时候就已经使用十六进制。</p>
 ]]></content>
       <tags>
-        <tag>进制</tag>
         <tag>汇编</tag>
+        <tag>进制</tag>
       </tags>
   </entry>
 </search>
