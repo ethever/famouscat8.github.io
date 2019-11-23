@@ -56,17 +56,19 @@
   };
 </script>
 
-  <meta name="description" content="我想带一人回云深不知处，带回去，藏起来">
-<meta property="og:type" content="website">
-<meta property="og:title" content="FamousCat">
-<meta property="og:url" content="http://yoursite.com/tags/C-类和对象/index.html">
+  <meta name="description" content="配置安装源安装php72w，是需要配置额外的yum源地址的，否则会报错不能找到相关软件包php高版本的yum源地址，有两部分，其中一部分是epel-release，另一部分来自webtatic。如果跳过epel-release，直接安装webtatic的话，会报错，  所以，要先安装epel-release  1rpm -Uvh https://dl.Fedoraproject.org/pub/e">
+<meta name="keywords" content="PHP安装,Centos7">
+<meta property="og:type" content="article">
+<meta property="og:title" content="centos7下Yum安装PHP7.2">
+<meta property="og:url" content="http://yoursite.com/2019/11/23/centos7下Yum安装PHP7-2/index.html">
 <meta property="og:site_name" content="FamousCat">
-<meta property="og:description" content="我想带一人回云深不知处，带回去，藏起来">
+<meta property="og:description" content="配置安装源安装php72w，是需要配置额外的yum源地址的，否则会报错不能找到相关软件包php高版本的yum源地址，有两部分，其中一部分是epel-release，另一部分来自webtatic。如果跳过epel-release，直接安装webtatic的话，会报错，  所以，要先安装epel-release  1rpm -Uvh https://dl.Fedoraproject.org/pub/e">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-23T06:02:31.341Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FamousCat">
-<meta name="twitter:description" content="我想带一人回云深不知处，带回去，藏起来">
-  <link rel="canonical" href="http://yoursite.com/tags/C-类和对象/">
+<meta name="twitter:title" content="centos7下Yum安装PHP7.2">
+<meta name="twitter:description" content="配置安装源安装php72w，是需要配置额外的yum源地址的，否则会报错不能找到相关软件包php高版本的yum源地址，有两部分，其中一部分是epel-release，另一部分来自webtatic。如果跳过epel-release，直接安装webtatic的话，会报错，  所以，要先安装epel-release  1rpm -Uvh https://dl.Fedoraproject.org/pub/e">
+  <link rel="canonical" href="http://yoursite.com/2019/11/23/centos7下Yum安装PHP7-2/">
 
 
 <script id="page-configurations">
@@ -74,13 +76,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>标签: C++类和对象 | FamousCat</title>
+  <title>centos7下Yum安装PHP7.2 | FamousCat</title>
   
 
 
@@ -301,91 +303,170 @@
         <div class="content-wrap">
             
 
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-  
-
           <div id="content" class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">C++类和对象
-          <small>标签</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/23/centos7下Yum安装PHP7-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FamousCat">
+      <meta itemprop="description" content="我想带一人回云深不知处，带回去，藏起来">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FamousCat">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            centos7下Yum安装PHP7.2
+            
+
+          
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-23 13:43:41 / 修改时间：14:02:31" itemprop="dateCreated datePublished" datetime="2019-11-23T13:43:41+08:00">2019-11-23</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+        <h3 id="配置安装源"><a href="#配置安装源" class="headerlink" title="配置安装源"></a>配置安装源</h3><p>安装php72w，是需要配置额外的yum源地址的，否则会报错不能找到相关软件包<br>php高版本的yum源地址，有两部分，其中一部分是epel-release，另一部分来自webtatic。如果跳过epel-release，直接安装webtatic的话，会报错，</p>
+<ol>
+<li>所以，要先安装epel-release</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -Uvh https://dl.Fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm</span><br></pre></td></tr></table></figure>
 
-  
-  
+<p>当然，也可以使用以下命令代替上面的命名，它们是相同的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release -y</span><br></pre></td></tr></table></figure>
 
-  
+<ol start="2">
+<li>安装webtatic</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>清除php的历史版本</li>
+</ol>
+<p>有些服务器可能会预装php，但不是最新版的，为了防止发生冲突，最好还是清除历史版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum remove -y php*</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装php拓展包"><a href="#安装php拓展包" class="headerlink" title="安装php拓展包"></a>安装php拓展包</h3><p>安装完epel-release和webtatic之后，就可以安装php拓展包了。对应的拓展包有很多，但cli和fpm这两个是必须的，其他的可以按需安装<br>比如可以这样：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install php72w php72w-cli php72w-fpm php72w-common php72w-devel</span><br></pre></td></tr></table></figure>
+
+<p>还有豪华版:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install php72w php72w-cli php72w-fpm php72w-common php72w-devel php72w-embedded php72w-gd php72w-mbstring php72w-mysqlnd php72w-opcache php72w-pdo php72w-xml</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置php开机自启"><a href="#设置php开机自启" class="headerlink" title="设置php开机自启"></a>设置php开机自启</h3><p>命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> php-fpm.service</span><br></pre></td></tr></table></figure>
+
+<h3 id="启动php服务"><a href="#启动php服务" class="headerlink" title="启动php服务"></a>启动php服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start php-fpm.service</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
     
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
-    </div>
+    
+    
+
+<div>
   
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-31T18:50:31+08:00"
-              content="2019-10-31">
-          10-31
-        </time>
-      </div>
-
-      <h2 class="post-title">
+    ﻿<div>
+	
+		<div style="text-align:center;color: #ccc;font-size:14px;">--------本文结束<i class="fa fa-heart"></i>感谢阅读--------</div>
+	
+</div>
+  
+</div>
         
-          <a class="post-title-link" href="/2019/10/31/C-类和对象/" itemprop="url">
-            <span itemprop="name">C++类和对象</span>
-          </a>
-        
-      </h2>
+      
 
-    </header>
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/PHP安装/" rel="tag"># PHP安装</a>
+            
+              <a href="/tags/Centos7/" rel="tag"># Centos7</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/11/23/redis安装/" rel="next" title="redis安装">
+                  <i class="fa fa-chevron-left"></i> redis安装
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    </div>
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
@@ -402,6 +483,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -414,6 +500,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置安装源"><span class="nav-number">1.</span> <span class="nav-text">配置安装源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装php拓展包"><span class="nav-number">2.</span> <span class="nav-text">安装php拓展包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置php开机自启"><span class="nav-number">3.</span> <span class="nav-text">设置php开机自启</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动php服务"><span class="nav-number">4.</span> <span class="nav-text">启动php服务</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 

@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>centos7下Yum安装PHP7.2</title>
+    <url>/2019/11/23/centos7%E4%B8%8BYum%E5%AE%89%E8%A3%85PHP7-2/</url>
+    <content><![CDATA[<h3 id="配置安装源"><a href="#配置安装源" class="headerlink" title="配置安装源"></a>配置安装源</h3><p>安装php72w，是需要配置额外的yum源地址的，否则会报错不能找到相关软件包<br>php高版本的yum源地址，有两部分，其中一部分是epel-release，另一部分来自webtatic。如果跳过epel-release，直接安装webtatic的话，会报错，</p>
+<ol>
+<li>所以，要先安装epel-release</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rpm -Uvh https://dl.Fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<p>当然，也可以使用以下命令代替上面的命名，它们是相同的。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install epel-release -y</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>安装webtatic</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>清除php的历史版本</li>
+</ol>
+<p>有些服务器可能会预装php，但不是最新版的，为了防止发生冲突，最好还是清除历史版本</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum remove -y php*</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装php拓展包"><a href="#安装php拓展包" class="headerlink" title="安装php拓展包"></a>安装php拓展包</h3><p>安装完epel-release和webtatic之后，就可以安装php拓展包了。对应的拓展包有很多，但cli和fpm这两个是必须的，其他的可以按需安装<br>比如可以这样：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum -y install php72w php72w-cli php72w-fpm php72w-common php72w-devel</span><br></pre></td></tr></table></figure>
+
+<p>还有豪华版:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum -y install php72w php72w-cli php72w-fpm php72w-common php72w-devel php72w-embedded php72w-gd php72w-mbstring php72w-mysqlnd php72w-opcache php72w-pdo php72w-xml</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置php开机自启"><a href="#设置php开机自启" class="headerlink" title="设置php开机自启"></a>设置php开机自启</h3><p>命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> php-fpm.service</span><br></pre></td></tr></table></figure>
+
+<h3 id="启动php服务"><a href="#启动php服务" class="headerlink" title="启动php服务"></a>启动php服务</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start php-fpm.service</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>PHP安装</tag>
+        <tag>Centos7</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>redis安装</title>
     <url>/2019/11/23/redis%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<h3 id="Redis是什么"><a href="#Redis是什么" class="headerlink" title="Redis是什么"></a>Redis是什么</h3><p>Redis是一个key-value存储系统。和Memcached类似，它支持的value类型相对更多，包括<kbd>string</kbd>字符串、<kbd>list</kbd>链表、<kbd>set</kbd>集合、<kbd>zset</kbd>有序集合、<kbd>hash</kbd>哈希类型。这些数据类型都支持push/pop、add/remove还有取交集，并集，差集等丰富的操作，而且这些操作都是原子性的。redis还支持不同的排序方式。为了保证效率，数据都缓存在内存中。redis会周期性地把数据写入硬盘或者把修改操作写入追加的记录文件，并且在此基础上实现了主从同步</p>
