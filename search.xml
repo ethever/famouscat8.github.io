@@ -7,6 +7,11 @@
 <ol>
 <li>所以，要先安装epel-release</li>
 </ol>
+<a id="more"></a>
+
+
+
+
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rpm -Uvh https://dl.Fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm</span><br></pre></td></tr></table></figure>
 
 <p>当然，也可以使用以下命令代替上面的命名，它们是相同的。</p>
@@ -34,6 +39,7 @@
 
 <h3 id="启动php服务"><a href="#启动php服务" class="headerlink" title="启动php服务"></a>启动php服务</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start php-fpm.service</span><br></pre></td></tr></table></figure>
 
+<p>刚学会了redis的基本操作，没想到客户端操作redis还得学php，害，我太难了。<br>还是看动漫来得快活些，话说斗罗大陆又更新了呢~</p>
 ]]></content>
       <categories>
         <category>PHP</category>
@@ -312,8 +318,8 @@
         <category>CentOS</category>
       </categories>
       <tags>
-        <tag>操作系统</tag>
         <tag>Cent OS</tag>
+        <tag>操作系统</tag>
         <tag>Linux</tag>
       </tags>
   </entry>
@@ -1242,8 +1248,8 @@ namespace OFILE
 <p>用二进制从0写到1111<br>0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111<br>这种二进制使用起来太麻烦，改成更简单一点的符号：<br>0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F<br>这就是十六进制了，中国古代的时候就已经使用十六进制。</p>
 ]]></content>
       <tags>
-        <tag>汇编</tag>
         <tag>进制</tag>
+        <tag>汇编</tag>
       </tags>
   </entry>
 </search>

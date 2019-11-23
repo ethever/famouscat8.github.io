@@ -56,18 +56,18 @@
   };
 </script>
 
-  <meta name="description" content="配置安装源安装php72w，是需要配置额外的yum源地址的，否则会报错不能找到相关软件包php高版本的yum源地址，有两部分，其中一部分是epel-release，另一部分来自webtatic。如果跳过epel-release，直接安装webtatic的话，会报错，  所以，要先安装epel-release  1rpm -Uvh https://dl.Fedoraproject.org/pub/e">
+  <meta name="description" content="配置安装源安装php72w，是需要配置额外的yum源地址的，否则会报错不能找到相关软件包php高版本的yum源地址，有两部分，其中一部分是epel-release，另一部分来自webtatic。如果跳过epel-release，直接安装webtatic的话，会报错，  所以，要先安装epel-release">
 <meta name="keywords" content="PHP安装,Centos7">
 <meta property="og:type" content="article">
 <meta property="og:title" content="centos7下Yum安装PHP7.2">
 <meta property="og:url" content="http://yoursite.com/2019/11/23/centos7下Yum安装PHP7-2/index.html">
 <meta property="og:site_name" content="FamousCat">
-<meta property="og:description" content="配置安装源安装php72w，是需要配置额外的yum源地址的，否则会报错不能找到相关软件包php高版本的yum源地址，有两部分，其中一部分是epel-release，另一部分来自webtatic。如果跳过epel-release，直接安装webtatic的话，会报错，  所以，要先安装epel-release  1rpm -Uvh https://dl.Fedoraproject.org/pub/e">
+<meta property="og:description" content="配置安装源安装php72w，是需要配置额外的yum源地址的，否则会报错不能找到相关软件包php高版本的yum源地址，有两部分，其中一部分是epel-release，另一部分来自webtatic。如果跳过epel-release，直接安装webtatic的话，会报错，  所以，要先安装epel-release">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-23T06:02:31.341Z">
+<meta property="og:updated_time" content="2019-11-23T06:05:46.395Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos7下Yum安装PHP7.2">
-<meta name="twitter:description" content="配置安装源安装php72w，是需要配置额外的yum源地址的，否则会报错不能找到相关软件包php高版本的yum源地址，有两部分，其中一部分是epel-release，另一部分来自webtatic。如果跳过epel-release，直接安装webtatic的话，会报错，  所以，要先安装epel-release  1rpm -Uvh https://dl.Fedoraproject.org/pub/e">
+<meta name="twitter:description" content="配置安装源安装php72w，是需要配置额外的yum源地址的，否则会报错不能找到相关软件包php高版本的yum源地址，有两部分，其中一部分是epel-release，另一部分来自webtatic。如果跳过epel-release，直接安装webtatic的话，会报错，  所以，要先安装epel-release">
   <link rel="canonical" href="http://yoursite.com/2019/11/23/centos7下Yum安装PHP7-2/">
 
 
@@ -342,7 +342,7 @@
                 
               
 
-              <time title="创建时间：2019-11-23 13:43:41 / 修改时间：14:02:31" itemprop="dateCreated datePublished" datetime="2019-11-23T13:43:41+08:00">2019-11-23</time>
+              <time title="创建时间：2019-11-23 13:43:41 / 修改时间：14:05:46" itemprop="dateCreated datePublished" datetime="2019-11-23T13:43:41+08:00">2019-11-23</time>
             </span>
           
             
@@ -382,6 +382,11 @@
 <ol>
 <li>所以，要先安装epel-release</li>
 </ol>
+<a id="more"></a>
+
+
+
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -Uvh https://dl.Fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm</span><br></pre></td></tr></table></figure>
 
 <p>当然，也可以使用以下命令代替上面的命名，它们是相同的。</p>
@@ -409,6 +414,7 @@
 
 <h3 id="启动php服务"><a href="#启动php服务" class="headerlink" title="启动php服务"></a>启动php服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start php-fpm.service</span><br></pre></td></tr></table></figure>
 
+<p>刚学会了redis的基本操作，没想到客户端操作redis还得学php，害，我太难了。<br>还是看动漫来得快活些，话说斗罗大陆又更新了呢~</p>
 
     </div>
 
@@ -630,7 +636,7 @@ setInterval("createtime()",250);
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">13.2k</span> 字
+      博客全站共： <span class="post-count">13.3k</span> 字
     </span>
 </div>
 
