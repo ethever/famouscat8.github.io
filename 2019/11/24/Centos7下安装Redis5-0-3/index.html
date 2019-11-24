@@ -56,19 +56,19 @@
   };
 </script>
 
-  <meta name="description" content="C++函数回调">
-<meta name="keywords" content="C++,函数回调">
+  <meta name="description" content="刚发现Redis是2.1*版本的，然而官网早已更新到了5.0+版本，所以赶紧更新了下">
+<meta name="keywords" content="CentOs7,Redis安装">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++函数回调">
-<meta property="og:url" content="http://yoursite.com/2019/10/23/C-函数回调/index.html">
+<meta property="og:title" content="Centos7下安装Redis5.0.3">
+<meta property="og:url" content="http://yoursite.com/2019/11/24/Centos7下安装Redis5-0-3/index.html">
 <meta property="og:site_name" content="FamousCat">
-<meta property="og:description" content="C++函数回调">
+<meta property="og:description" content="刚发现Redis是2.1*版本的，然而官网早已更新到了5.0+版本，所以赶紧更新了下">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-23T11:22:56.048Z">
+<meta property="og:updated_time" content="2019-11-24T11:07:21.604Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++函数回调">
-<meta name="twitter:description" content="C++函数回调">
-  <link rel="canonical" href="http://yoursite.com/2019/10/23/C-函数回调/">
+<meta name="twitter:title" content="Centos7下安装Redis5.0.3">
+<meta name="twitter:description" content="刚发现Redis是2.1*版本的，然而官网早已更新到了5.0+版本，所以赶紧更新了下">
+  <link rel="canonical" href="http://yoursite.com/2019/11/24/Centos7下安装Redis5-0-3/">
 
 
 <script id="page-configurations">
@@ -82,7 +82,7 @@
   };
 </script>
 
-  <title>C++函数回调 | FamousCat</title>
+  <title>Centos7下安装Redis5.0.3 | FamousCat</title>
   
 
 
@@ -311,7 +311,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/23/C-函数回调/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/24/Centos7下安装Redis5-0-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="FamousCat">
@@ -325,7 +325,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            C++函数回调
+            Centos7下安装Redis5.0.3
             
 
           
@@ -342,7 +342,7 @@
                 
               
 
-              <time title="创建时间：2019-10-23 19:20:42 / 修改时间：19:22:56" itemprop="dateCreated datePublished" datetime="2019-10-23T19:20:42+08:00">2019-10-23</time>
+              <time title="创建时间：2019-11-24 18:34:13 / 修改时间：19:07:21" itemprop="dateCreated datePublished" datetime="2019-11-24T18:34:13+08:00">2019-11-24</time>
             </span>
           
             
@@ -356,8 +356,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
+                  <a href="/categories/Redis/" itemprop="url" rel="index">
+                    <span itemprop="name">Redis</span>
                   </a>
                 </span>
 
@@ -378,10 +378,44 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>C++函数回调</p>
+        <p>刚发现Redis是2.1*版本的，然而官网早已更新到了5.0+版本，所以赶紧更新了下</p>
 <a id="more"></a>
 
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"><span class="comment">// 回调函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">populate_array</span><span class="params">(<span class="keyword">int</span> *<span class="built_in">array</span>, <span class="keyword">size_t</span> arraySize, <span class="keyword">int</span> (*getNextValue)(<span class="keyword">void</span>))</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">size_t</span> i=<span class="number">0</span>; i&lt;arraySize; i++)</span><br><span class="line">        <span class="built_in">array</span>[i] = getNextValue();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 获取随机值</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getNextRandomValue</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> rand();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> myarray[<span class="number">10</span>];</span><br><span class="line">    populate_array(myarray, <span class="number">10</span>, getNextRandomValue);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, myarray[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Redis下载列表"><a href="#Redis下载列表" class="headerlink" title="Redis下载列表"></a>Redis下载列表</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://download.redis.io/releases</span><br></pre></td></tr></table></figure>
+
+<h4 id="安装在opt下"><a href="#安装在opt下" class="headerlink" title="安装在opt下"></a>安装在opt下</h4><p><code>opt</code>目录常用于安装测试一些大型软件，所以<br>进入<code>opt</code>目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /opt</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>wget</code>下载<code>redis-5</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-5.0.3.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p><code>tar.gz</code>是压缩包，所以需要解压</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf redis-5.0.3.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>解压后会出现一个<code>redis-5.0.3</code>目录，直接进入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd redis-5.0.3</span><br></pre></td></tr></table></figure>
+
+<p>然后编译，记得系统需要有<code>GCC</code>环境，如果没有，可以安装一下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install gcc -y</span><br></pre></td></tr></table></figure>
+
+<p>然后在redis-5.0.3目录中执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
+
+<p>用上面的命令编译好了，然后当然就是安装<br>比如我要安装到/opt/redis-5目录下，所以我这样写</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make PREFIX=/opt/redis-5 MALLOC=libc install</span><br></pre></td></tr></table></figure>
+
+<p>至此，redis已经安装完成啦~</p>
+<h4 id="修改默认配置"><a href="#修改默认配置" class="headerlink" title="修改默认配置"></a>修改默认配置</h4><p>安装完成后，会发现<code>/opt/redis-5</code>下有一个<code>bin</code>目录，进入<code>bin</code>，执行<code>./reids-srever</code>就可以启动<code>redis</code><br>数据库了，但不推荐使用默认配置，所以我们需要更改默认配置，修改<code>redis</code>的默认配置需要使用<code>redis.conf</code>，这个文件在<code>redis</code>的安装包下，刚刚我们使用<code>wget</code>将<code>redis</code>下载到了<code>/opt</code>中，然后解压，所以<code>redis.conf</code>在<code>/opt/redis-5.0.3</code>中。</p>
+<p>将安装包中的默认配置文件复制过来，修改添加我们需要的配置</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /opt/redis-5.0.3/redis.conf /opt/redis-5/bin</span><br></pre></td></tr></table></figure>
+
+<p>这样<code>redis.conf</code>就和<code>redis-server</code>在同级目录了。</p>
+<p>修改<code>/opt/redis-5/bin/redis.conf</code>就可以修改<code>redis</code>的默认配置</p>
+<p>比如，关闭本地连接限制，让外网也能连接你的数据库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">将<span class="built_in">bind</span> 127.0.0.1修改成<span class="comment">#127.0.0.1</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">就是将<span class="built_in">bind</span> 127.0.0.1注释掉</span></span><br></pre></td></tr></table></figure>
+
+<p>修改完成后，开启<code>redis</code>服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./redis-server redis.conf</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -408,9 +442,9 @@
           
           <div class="post-tags">
             
-              <a href="/tags/C/" rel="tag"># C++</a>
+              <a href="/tags/CentOs7/" rel="tag"># CentOs7</a>
             
-              <a href="/tags/函数回调/" rel="tag"># 函数回调</a>
+              <a href="/tags/Redis安装/" rel="tag"># Redis安装</a>
             
           </div>
         
@@ -420,8 +454,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/10/23/转载-关于封装-一个有趣的C-例子/" rel="next" title="[转载]关于封装--一个有趣的C++例子">
-                  <i class="fa fa-chevron-left"></i> [转载]关于封装--一个有趣的C++例子
+                <a href="/2019/11/23/centos7下Yum安装PHP7-2/" rel="next" title="centos7下Yum安装PHP7.2">
+                  <i class="fa fa-chevron-left"></i> centos7下Yum安装PHP7.2
                 </a>
               
             </div>
@@ -429,10 +463,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/10/24/笔记/" rel="prev" title="笔记">
-                  笔记 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -478,6 +508,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Redis下载列表"><span class="nav-number">1.</span> <span class="nav-text">Redis下载列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装在opt下"><span class="nav-number">2.</span> <span class="nav-text">安装在opt下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改默认配置"><span class="nav-number">3.</span> <span class="nav-text">修改默认配置</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
