@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>PHP之ini_set的用法</title>
+    <url>/2019/11/25/PHP%E4%B9%8Bini-set%E7%9A%84%E7%94%A8%E6%B3%95/</url>
+    <content><![CDATA[<p>PHP是最好的语言</p>
+<h4 id="PHP中的ini-set是什么？"><a href="#PHP中的ini-set是什么？" class="headerlink" title="PHP中的ini_set是什么？"></a>PHP中的ini_set是什么？</h4><p>PHP <code>ini_set</code>用来设置<code>php.ini</code>的值，在这段PHP执行完后恢复原来的配置，这对于一些测试非常方便，当然这也可以用在实际开发中。</p>
+<a id="more"></a>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><ol>
+<li>函数原型：</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">string ini_set(string $varname,strng $newvalude)</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：<code>ini_set</code>不是所有<code>php</code>配置都可以修改</strong></p>
+<h5 id="常见的设置"><a href="#常见的设置" class="headerlink" title="常见的设置"></a>常见的设置</h5><ol>
+<li><code>memory_limit</code>:设定一个脚本所能申请到的最大的内存字节数。这对于一些写的非常***的脚本可是非常有利的。其中<code>@</code>表示不输出错误。</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">@ini_set (<span class="string">'memory_limit'</span>,<span class="string">'64M'</span>);</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><code>display_errors</code>:设置错误信息的类别</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">@ini_set(<span class="string">'display_error'</span>,<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<p>emmmm，还有很多很多，以后用到在补上吧~</p>
+]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>PHP</tag>
+        <tag>PHP ini_set用法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Centos7下安装Redis5.0.3</title>
     <url>/2019/11/24/Centos7%E4%B8%8B%E5%AE%89%E8%A3%85Redis5-0-3/</url>
     <content><![CDATA[<p>刚发现Redis是2.1*版本的，然而官网早已更新到了5.0+版本，所以赶紧更新了下</p>
@@ -369,8 +401,8 @@
         <category>CentOS</category>
       </categories>
       <tags>
-        <tag>Cent OS</tag>
         <tag>操作系统</tag>
+        <tag>Cent OS</tag>
         <tag>Linux</tag>
       </tags>
   </entry>
@@ -958,8 +990,8 @@ namespace OFILE
         <category>C语言</category>
       </categories>
       <tags>
-        <tag>C</tag>
         <tag>C语言</tag>
+        <tag>C</tag>
       </tags>
   </entry>
   <entry>
@@ -1299,8 +1331,8 @@ namespace OFILE
 <p>用二进制从0写到1111<br>0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111<br>这种二进制使用起来太麻烦，改成更简单一点的符号：<br>0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F<br>这就是十六进制了，中国古代的时候就已经使用十六进制。</p>
 ]]></content>
       <tags>
-        <tag>汇编</tag>
         <tag>进制</tag>
+        <tag>汇编</tag>
       </tags>
   </entry>
 </search>
