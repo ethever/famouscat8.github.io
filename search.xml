@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>数学公式</title>
+    <url>/2019/12/02/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</url>
+    <content><![CDATA[<p>$$<br>\Gamma_{\epsilon}(x)=\left[1-e^{-2 \pi \epsilon}\right]^{1-x} \prod_{n=0}^{\infty} \frac{1-\exp (-2 \pi \epsilon(n+1))}{1-\exp (-2 \pi \epsilon(x+n))}<br>$$</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+        <tag>高数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PHP之ini_set的用法</title>
     <url>/2019/11/25/PHP%E4%B9%8Bini-set%E7%9A%84%E7%94%A8%E6%B3%95/</url>
     <content><![CDATA[<p>PHP是最好的语言</p>
@@ -1331,8 +1344,8 @@ namespace OFILE
 <p>用二进制从0写到1111<br>0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111<br>这种二进制使用起来太麻烦，改成更简单一点的符号：<br>0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F<br>这就是十六进制了，中国古代的时候就已经使用十六进制。</p>
 ]]></content>
       <tags>
-        <tag>进制</tag>
         <tag>汇编</tag>
+        <tag>进制</tag>
       </tags>
   </entry>
 </search>
